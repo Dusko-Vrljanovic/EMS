@@ -25,11 +25,11 @@ namespace EMS.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<activity> activities { get; set; }
-        public virtual DbSet<activitytype> activitytypes { get; set; }
-        public virtual DbSet<@event> events { get; set; }
-        public virtual DbSet<eventtype> eventtypes { get; set; }
-        public virtual DbSet<topic> topics { get; set; }
-        public virtual DbSet<topictype> topictypes { get; set; }
+        public virtual DbSet<Activity> Activities { get; set; }
+        public virtual DbSet<ActivityType> ActivityTypes { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
+        public virtual DbSet<EventType> EventTypes { get; set; }
+        public virtual DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<TopicType> TopicTypes { get; set; }
     }
 }

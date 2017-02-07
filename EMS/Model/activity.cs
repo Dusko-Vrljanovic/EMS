@@ -12,7 +12,7 @@ namespace EMS.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class activity
+    public partial class Activity
     {
         public int ID { get; set; }
         public int TopicID { get; set; }
@@ -21,8 +21,9 @@ namespace EMS.Model
         public string Description { get; set; }
         public string Location { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<bool> Active { get; set; }
     
-        public virtual activitytype activitytype { get; set; }
-        public virtual topic topic { get; set; }
+        public virtual ActivityType ActivityType { get; set; }
+        public virtual Topic Topic { get; set; }
     }
 }

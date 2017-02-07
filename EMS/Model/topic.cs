@@ -12,12 +12,12 @@ namespace EMS.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class topic
+    public partial class Topic
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public topic()
+        public Topic()
         {
-            this.activities = new HashSet<activity>();
+            this.Activities = new HashSet<Activity>();
         }
     
         public int ID { get; set; }
@@ -27,10 +27,11 @@ namespace EMS.Model
         public string Description { get; set; }
         public string Location { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<bool> Active { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<activity> activities { get; set; }
-        public virtual @event @event { get; set; }
-        public virtual topictype topictype { get; set; }
+        public virtual ICollection<Activity> Activities { get; set; }
+        public virtual Event Event { get; set; }
+        public virtual TopicType TopicType { get; set; }
     }
 }

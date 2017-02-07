@@ -69,38 +69,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\activity.cs">
-      <DependentUpon>MEMSEntityDataModel.tt</DependentUpon>
+    <Compile Include="Model\Activity.cs">
+      <DependentUpon>EMSEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\activitytype.cs">
-      <DependentUpon>MEMSEntityDataModel.tt</DependentUpon>
+    <Compile Include="Model\ActivityType.cs">
+      <DependentUpon>EMSEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\event.cs">
-      <DependentUpon>MEMSEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\eventtype.cs">
-      <DependentUpon>MEMSEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\MEMSEntityDataModel.Context.cs">
+    <Compile Include="Model\EMSEntityDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MEMSEntityDataModel.Context.tt</DependentUpon>
+      <DependentUpon>EMSEntityDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\MEMSEntityDataModel.cs">
+    <Compile Include="Model\EMSEntityDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MEMSEntityDataModel.tt</DependentUpon>
+      <DependentUpon>EMSEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\MEMSEntityDataModel.Designer.cs">
+    <Compile Include="Model\EMSEntityDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MEMSEntityDataModel.edmx</DependentUpon>
+      <DependentUpon>EMSEntityDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Model\topic.cs">
-      <DependentUpon>MEMSEntityDataModel.tt</DependentUpon>
+    <Compile Include="Model\Event.cs">
+      <DependentUpon>EMSEntityDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\topictype.cs">
-      <DependentUpon>MEMSEntityDataModel.tt</DependentUpon>
+    <Compile Include="Model\EventType.cs">
+      <DependentUpon>EMSEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Topic.cs">
+      <DependentUpon>EMSEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\TopicType.cs">
+      <DependentUpon>EMSEntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,12 +123,12 @@
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\MEMSEntityDataModel.edmx">
+    <EntityDeploy Include="Model\EMSEntityDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MEMSEntityDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>EMSEntityDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model\MEMSEntityDataModel.edmx.diagram">
-      <DependentUpon>MEMSEntityDataModel.edmx</DependentUpon>
+    <None Include="Model\EMSEntityDataModel.edmx.diagram">
+      <DependentUpon>EMSEntityDataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -146,19 +146,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Model\MEMSEntityDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MEMSEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>MEMSEntityDataModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\MEMSEntityDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MEMSEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>MEMSEntityDataModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Model\EMSEntityDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EMSEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>EMSEntityDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\EMSEntityDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EMSEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>EMSEntityDataModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

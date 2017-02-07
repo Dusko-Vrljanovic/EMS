@@ -12,18 +12,18 @@ namespace EMS.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class topictype
+    public partial class TopicType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public topictype()
+        public TopicType()
         {
-            this.topics = new HashSet<topic>();
+            this.Topics = new HashSet<Topic>();
         }
     
         public int ID { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<topic> topics { get; set; }
+        public virtual ICollection<Topic> Topics { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace EMS.Util
 
         }
 
-        public bool addEvent(@event e)
+        public bool addEvent(Event e)
         {
             try
             {

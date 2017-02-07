@@ -12,18 +12,18 @@ namespace EMS.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class eventtype
+    public partial class EventType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public eventtype()
+        public EventType()
         {
-            this.events = new HashSet<@event>();
+            this.Events = new HashSet<Event>();
         }
     
         public int ID { get; set; }
         public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<@event> events { get; set; }
+        public virtual ICollection<Event> Events { get; set; }
     }
 }

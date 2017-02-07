@@ -4,8 +4,8 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EMSModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="activity">
+      <Schema Namespace="EMSModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activity">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -16,15 +16,16 @@
           <Property Name="Description" Type="text" />
           <Property Name="Location" Type="varchar" MaxLength="20" />
           <Property Name="Date" Type="date" />
+          <Property Name="Active" Type="bool" />
         </EntityType>
-        <EntityType Name="activitytype">
+        <EntityType Name="ActivityType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="event">
+        <EntityType Name="Event">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -34,15 +35,16 @@
           <Property Name="Description" Type="text" />
           <Property Name="Location" Type="varchar" MaxLength="20" />
           <Property Name="Date" Type="date" />
+          <Property Name="Active" Type="bool" />
         </EntityType>
-        <EntityType Name="eventtype">
+        <EntityType Name="EventType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="20" />
         </EntityType>
-        <EntityType Name="topic">
+        <EntityType Name="Topic">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -53,100 +55,101 @@
           <Property Name="Description" Type="text" />
           <Property Name="Location" Type="varchar" MaxLength="20" />
           <Property Name="Date" Type="date" />
+          <Property Name="Active" Type="bool" />
         </EntityType>
-        <EntityType Name="topictype">
+        <EntityType Name="TopicType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="20" />
         </EntityType>
-        <Association Name="activity_ibfk_1">
-          <End Role="activitytype" Type="Self.activitytype" Multiplicity="1" />
-          <End Role="activity" Type="Self.activity" Multiplicity="*" />
+        <Association Name="Activity_ibfk_1">
+          <End Role="ActivityType" Type="Self.ActivityType" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="activitytype">
+            <Principal Role="ActivityType">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="activity">
+            <Dependent Role="Activity">
               <PropertyRef Name="TypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="activity_ibfk_2">
-          <End Role="topic" Type="Self.topic" Multiplicity="1" />
-          <End Role="activity" Type="Self.activity" Multiplicity="*" />
+        <Association Name="Activity_ibfk_2">
+          <End Role="Topic" Type="Self.Topic" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="topic">
+            <Principal Role="Topic">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="activity">
+            <Dependent Role="Activity">
               <PropertyRef Name="TopicID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="event_ibfk_1">
-          <End Role="eventtype" Type="Self.eventtype" Multiplicity="1" />
-          <End Role="event" Type="Self.event" Multiplicity="*" />
+        <Association Name="Event_ibfk_1">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="eventtype">
+            <Principal Role="EventType">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="event">
+            <Dependent Role="Event">
               <PropertyRef Name="TypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="topic_ibfk_1">
-          <End Role="topictype" Type="Self.topictype" Multiplicity="1" />
-          <End Role="topic" Type="Self.topic" Multiplicity="*" />
+        <Association Name="Topic_ibfk_1">
+          <End Role="TopicType" Type="Self.TopicType" Multiplicity="1" />
+          <End Role="Topic" Type="Self.Topic" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="topictype">
+            <Principal Role="TopicType">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="topic">
+            <Dependent Role="Topic">
               <PropertyRef Name="TypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="topic_ibfk_2">
-          <End Role="event" Type="Self.event" Multiplicity="1" />
-          <End Role="topic" Type="Self.topic" Multiplicity="*" />
+        <Association Name="Topic_ibfk_2">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="Topic" Type="Self.Topic" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="event">
+            <Principal Role="Event">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="topic">
+            <Dependent Role="Topic">
               <PropertyRef Name="EventID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EMSModelStoreContainer">
-          <EntitySet Name="activity" EntityType="Self.activity" Schema="ems" store:Type="Tables" />
-          <EntitySet Name="activitytype" EntityType="Self.activitytype" Schema="ems" store:Type="Tables" />
-          <EntitySet Name="event" EntityType="Self.event" Schema="ems" store:Type="Tables" />
-          <EntitySet Name="eventtype" EntityType="Self.eventtype" Schema="ems" store:Type="Tables" />
-          <EntitySet Name="topic" EntityType="Self.topic" Schema="ems" store:Type="Tables" />
-          <EntitySet Name="topictype" EntityType="Self.topictype" Schema="ems" store:Type="Tables" />
-          <AssociationSet Name="activity_ibfk_1" Association="Self.activity_ibfk_1">
-            <End Role="activitytype" EntitySet="activitytype" />
-            <End Role="activity" EntitySet="activity" />
+          <EntitySet Name="Activity" EntityType="Self.Activity" Schema="ems" store:Type="Tables" />
+          <EntitySet Name="ActivityType" EntityType="Self.ActivityType" Schema="ems" store:Type="Tables" />
+          <EntitySet Name="Event" EntityType="Self.Event" Schema="ems" store:Type="Tables" />
+          <EntitySet Name="EventType" EntityType="Self.EventType" Schema="ems" store:Type="Tables" />
+          <EntitySet Name="Topic" EntityType="Self.Topic" Schema="ems" store:Type="Tables" />
+          <EntitySet Name="TopicType" EntityType="Self.TopicType" Schema="ems" store:Type="Tables" />
+          <AssociationSet Name="Activity_ibfk_1" Association="Self.Activity_ibfk_1">
+            <End Role="ActivityType" EntitySet="ActivityType" />
+            <End Role="Activity" EntitySet="Activity" />
           </AssociationSet>
-          <AssociationSet Name="activity_ibfk_2" Association="Self.activity_ibfk_2">
-            <End Role="topic" EntitySet="topic" />
-            <End Role="activity" EntitySet="activity" />
+          <AssociationSet Name="Activity_ibfk_2" Association="Self.Activity_ibfk_2">
+            <End Role="Topic" EntitySet="Topic" />
+            <End Role="Activity" EntitySet="Activity" />
           </AssociationSet>
-          <AssociationSet Name="event_ibfk_1" Association="Self.event_ibfk_1">
-            <End Role="eventtype" EntitySet="eventtype" />
-            <End Role="event" EntitySet="event" />
+          <AssociationSet Name="Event_ibfk_1" Association="Self.Event_ibfk_1">
+            <End Role="EventType" EntitySet="EventType" />
+            <End Role="Event" EntitySet="Event" />
           </AssociationSet>
-          <AssociationSet Name="topic_ibfk_1" Association="Self.topic_ibfk_1">
-            <End Role="topictype" EntitySet="topictype" />
-            <End Role="topic" EntitySet="topic" />
+          <AssociationSet Name="Topic_ibfk_1" Association="Self.Topic_ibfk_1">
+            <End Role="TopicType" EntitySet="TopicType" />
+            <End Role="Topic" EntitySet="Topic" />
           </AssociationSet>
-          <AssociationSet Name="topic_ibfk_2" Association="Self.topic_ibfk_2">
-            <End Role="event" EntitySet="event" />
-            <End Role="topic" EntitySet="topic" />
+          <AssociationSet Name="Topic_ibfk_2" Association="Self.Topic_ibfk_2">
+            <End Role="Event" EntitySet="Event" />
+            <End Role="Topic" EntitySet="Topic" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -154,7 +157,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="activity">
+        <EntityType Name="Activity">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -165,18 +168,19 @@
           <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Location" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" />
-          <NavigationProperty Name="activitytype" Relationship="Self.activity_ibfk_1" FromRole="activity" ToRole="activitytype" />
-          <NavigationProperty Name="topic" Relationship="Self.activity_ibfk_2" FromRole="activity" ToRole="topic" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="ActivityType" Relationship="Self.Activity_ibfk_1" FromRole="Activity" ToRole="ActivityType" />
+          <NavigationProperty Name="Topic" Relationship="Self.Activity_ibfk_2" FromRole="Activity" ToRole="Topic" />
         </EntityType>
-        <EntityType Name="activitytype">
+        <EntityType Name="ActivityType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="activities" Relationship="Self.activity_ibfk_1" FromRole="activitytype" ToRole="activity" />
+          <NavigationProperty Name="Activities" Relationship="Self.Activity_ibfk_1" FromRole="ActivityType" ToRole="Activity" />
         </EntityType>
-        <EntityType Name="event">
+        <EntityType Name="Event">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -186,18 +190,19 @@
           <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Location" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" />
-          <NavigationProperty Name="eventtype" Relationship="Self.event_ibfk_1" FromRole="event" ToRole="eventtype" />
-          <NavigationProperty Name="topics" Relationship="Self.topic_ibfk_2" FromRole="event" ToRole="topic" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="EventType" Relationship="Self.Event_ibfk_1" FromRole="Event" ToRole="EventType" />
+          <NavigationProperty Name="Topics" Relationship="Self.Topic_ibfk_2" FromRole="Event" ToRole="Topic" />
         </EntityType>
-        <EntityType Name="eventtype">
+        <EntityType Name="EventType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="events" Relationship="Self.event_ibfk_1" FromRole="eventtype" ToRole="event" />
+          <NavigationProperty Name="Events" Relationship="Self.Event_ibfk_1" FromRole="EventType" ToRole="Event" />
         </EntityType>
-        <EntityType Name="topic">
+        <EntityType Name="Topic">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -208,104 +213,105 @@
           <Property Name="Description" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
           <Property Name="Location" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" />
-          <NavigationProperty Name="activities" Relationship="Self.activity_ibfk_2" FromRole="topic" ToRole="activity" />
-          <NavigationProperty Name="event" Relationship="Self.topic_ibfk_2" FromRole="topic" ToRole="event" />
-          <NavigationProperty Name="topictype" Relationship="Self.topic_ibfk_1" FromRole="topic" ToRole="topictype" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="Activities" Relationship="Self.Activity_ibfk_2" FromRole="Topic" ToRole="Activity" />
+          <NavigationProperty Name="Event" Relationship="Self.Topic_ibfk_2" FromRole="Topic" ToRole="Event" />
+          <NavigationProperty Name="TopicType" Relationship="Self.Topic_ibfk_1" FromRole="Topic" ToRole="TopicType" />
         </EntityType>
-        <EntityType Name="topictype">
+        <EntityType Name="TopicType">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="topics" Relationship="Self.topic_ibfk_1" FromRole="topictype" ToRole="topic" />
+          <NavigationProperty Name="Topics" Relationship="Self.Topic_ibfk_1" FromRole="TopicType" ToRole="Topic" />
         </EntityType>
-        <Association Name="activity_ibfk_1">
-          <End Role="activitytype" Type="Self.activitytype" Multiplicity="1" />
-          <End Role="activity" Type="Self.activity" Multiplicity="*" />
+        <Association Name="Activity_ibfk_1">
+          <End Role="ActivityType" Type="Self.ActivityType" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="activitytype">
+            <Principal Role="ActivityType">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="activity">
+            <Dependent Role="Activity">
               <PropertyRef Name="TypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="activity_ibfk_2">
-          <End Role="topic" Type="Self.topic" Multiplicity="1" />
-          <End Role="activity" Type="Self.activity" Multiplicity="*" />
+        <Association Name="Activity_ibfk_2">
+          <End Role="Topic" Type="Self.Topic" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="topic">
+            <Principal Role="Topic">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="activity">
+            <Dependent Role="Activity">
               <PropertyRef Name="TopicID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="event_ibfk_1">
-          <End Role="eventtype" Type="Self.eventtype" Multiplicity="1" />
-          <End Role="event" Type="Self.event" Multiplicity="*" />
+        <Association Name="Event_ibfk_1">
+          <End Role="EventType" Type="Self.EventType" Multiplicity="1" />
+          <End Role="Event" Type="Self.Event" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="eventtype">
+            <Principal Role="EventType">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="event">
+            <Dependent Role="Event">
               <PropertyRef Name="TypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="topic_ibfk_2">
-          <End Role="event" Type="Self.event" Multiplicity="1" />
-          <End Role="topic" Type="Self.topic" Multiplicity="*" />
+        <Association Name="Topic_ibfk_2">
+          <End Role="Event" Type="Self.Event" Multiplicity="1" />
+          <End Role="Topic" Type="Self.Topic" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="event">
+            <Principal Role="Event">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="topic">
+            <Dependent Role="Topic">
               <PropertyRef Name="EventID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="topic_ibfk_1">
-          <End Role="topictype" Type="Self.topictype" Multiplicity="1" />
-          <End Role="topic" Type="Self.topic" Multiplicity="*" />
+        <Association Name="Topic_ibfk_1">
+          <End Role="TopicType" Type="Self.TopicType" Multiplicity="1" />
+          <End Role="Topic" Type="Self.Topic" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="topictype">
+            <Principal Role="TopicType">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="topic">
+            <Dependent Role="Topic">
               <PropertyRef Name="TypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="EMSEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="activities" EntityType="Self.activity" />
-          <EntitySet Name="activitytypes" EntityType="Self.activitytype" />
-          <EntitySet Name="events" EntityType="Self.event" />
-          <EntitySet Name="eventtypes" EntityType="Self.eventtype" />
-          <EntitySet Name="topics" EntityType="Self.topic" />
-          <EntitySet Name="topictypes" EntityType="Self.topictype" />
-          <AssociationSet Name="activity_ibfk_1" Association="Self.activity_ibfk_1">
-            <End Role="activitytype" EntitySet="activitytypes" />
-            <End Role="activity" EntitySet="activities" />
+          <EntitySet Name="Activities" EntityType="Self.Activity" />
+          <EntitySet Name="ActivityTypes" EntityType="Self.ActivityType" />
+          <EntitySet Name="Events" EntityType="Self.Event" />
+          <EntitySet Name="EventTypes" EntityType="Self.EventType" />
+          <EntitySet Name="Topics" EntityType="Self.Topic" />
+          <EntitySet Name="TopicTypes" EntityType="Self.TopicType" />
+          <AssociationSet Name="Activity_ibfk_1" Association="Self.Activity_ibfk_1">
+            <End Role="ActivityType" EntitySet="ActivityTypes" />
+            <End Role="Activity" EntitySet="Activities" />
           </AssociationSet>
-          <AssociationSet Name="activity_ibfk_2" Association="Self.activity_ibfk_2">
-            <End Role="topic" EntitySet="topics" />
-            <End Role="activity" EntitySet="activities" />
+          <AssociationSet Name="Activity_ibfk_2" Association="Self.Activity_ibfk_2">
+            <End Role="Topic" EntitySet="Topics" />
+            <End Role="Activity" EntitySet="Activities" />
           </AssociationSet>
-          <AssociationSet Name="event_ibfk_1" Association="Self.event_ibfk_1">
-            <End Role="eventtype" EntitySet="eventtypes" />
-            <End Role="event" EntitySet="events" />
+          <AssociationSet Name="Event_ibfk_1" Association="Self.Event_ibfk_1">
+            <End Role="EventType" EntitySet="EventTypes" />
+            <End Role="Event" EntitySet="Events" />
           </AssociationSet>
-          <AssociationSet Name="topic_ibfk_2" Association="Self.topic_ibfk_2">
-            <End Role="event" EntitySet="events" />
-            <End Role="topic" EntitySet="topics" />
+          <AssociationSet Name="Topic_ibfk_2" Association="Self.Topic_ibfk_2">
+            <End Role="Event" EntitySet="Events" />
+            <End Role="Topic" EntitySet="Topics" />
           </AssociationSet>
-          <AssociationSet Name="topic_ibfk_1" Association="Self.topic_ibfk_1">
-            <End Role="topictype" EntitySet="topictypes" />
-            <End Role="topic" EntitySet="topics" />
+          <AssociationSet Name="Topic_ibfk_1" Association="Self.Topic_ibfk_1">
+            <End Role="TopicType" EntitySet="TopicTypes" />
+            <End Role="Topic" EntitySet="Topics" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -314,9 +320,9 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="EMSModelStoreContainer" CdmEntityContainer="EMSEntities">
-          <EntitySetMapping Name="activities">
-            <EntityTypeMapping TypeName="EMSModel.activity">
-              <MappingFragment StoreEntitySet="activity">
+          <EntitySetMapping Name="Activities">
+            <EntityTypeMapping TypeName="EMSModel.Activity">
+              <MappingFragment StoreEntitySet="Activity">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TopicID" ColumnName="TopicID" />
                 <ScalarProperty Name="TypeID" ColumnName="TypeID" />
@@ -324,40 +330,42 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="activitytypes">
-            <EntityTypeMapping TypeName="EMSModel.activitytype">
-              <MappingFragment StoreEntitySet="activitytype">
+          <EntitySetMapping Name="ActivityTypes">
+            <EntityTypeMapping TypeName="EMSModel.ActivityType">
+              <MappingFragment StoreEntitySet="ActivityType">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="events">
-            <EntityTypeMapping TypeName="EMSModel.event">
-              <MappingFragment StoreEntitySet="event">
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="EMSModel.Event">
+              <MappingFragment StoreEntitySet="Event">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="TypeID" ColumnName="TypeID" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="eventtypes">
-            <EntityTypeMapping TypeName="EMSModel.eventtype">
-              <MappingFragment StoreEntitySet="eventtype">
+          <EntitySetMapping Name="EventTypes">
+            <EntityTypeMapping TypeName="EMSModel.EventType">
+              <MappingFragment StoreEntitySet="EventType">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="topics">
-            <EntityTypeMapping TypeName="EMSModel.topic">
-              <MappingFragment StoreEntitySet="topic">
+          <EntitySetMapping Name="Topics">
+            <EntityTypeMapping TypeName="EMSModel.Topic">
+              <MappingFragment StoreEntitySet="Topic">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="EventID" ColumnName="EventID" />
                 <ScalarProperty Name="TypeID" ColumnName="TypeID" />
@@ -365,12 +373,13 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Location" ColumnName="Location" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="topictypes">
-            <EntityTypeMapping TypeName="EMSModel.topictype">
-              <MappingFragment StoreEntitySet="topictype">
+          <EntitySetMapping Name="TopicTypes">
+            <EntityTypeMapping TypeName="EMSModel.TopicType">
+              <MappingFragment StoreEntitySet="TopicType">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
