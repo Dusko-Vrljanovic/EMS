@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EventManagmentSystem.View
+namespace EMS.View
 {
     public partial class MainForm : Form
     {

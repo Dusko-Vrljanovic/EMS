@@ -1,4 +1,4 @@
-﻿namespace EventManagmentSystem.View
+﻿namespace EMS.View
 {
     partial class MainForm
     {
