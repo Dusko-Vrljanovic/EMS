@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.eventTableLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.eventDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.titleLabel = new System.Windows.Forms.Label();
-            this.titleErrorLabel = new System.Windows.Forms.Label();
             this.typeLabel = new System.Windows.Forms.Label();
+            this.titleErrorLabel = new System.Windows.Forms.Label();
             this.typeErrorLabel = new System.Windows.Forms.Label();
             this.locationLabel = new System.Windows.Forms.Label();
             this.locationErrorLabel = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.eventDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dateTimeLabel = new System.Windows.Forms.Label();
             this.descriptionPanel = new System.Windows.Forms.Panel();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.descriptionLabel = new System.Windows.Forms.Label();
             this.controlPanel = new System.Windows.Forms.Panel();
-            this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.locationTextBox = new System.Windows.Forms.TextBox();
             this.typeComboBox = new System.Windows.Forms.ComboBox();
-            this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.eventTableLayout.SuspendLayout();
             this.descriptionPanel.SuspendLayout();
             this.controlPanel.SuspendLayout();
@@ -87,59 +87,35 @@
             this.eventTableLayout.Size = new System.Drawing.Size(613, 426);
             this.eventTableLayout.TabIndex = 0;
             // 
-            // eventDateTimePicker
+            // typeLabel
             // 
-            this.eventDateTimePicker.AllowDrop = true;
-            this.eventDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.eventDateTimePicker.CustomFormat = "                                  dd/MM/yyyy                                     " +
-    "        HH:mm:ss";
-            this.eventDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.eventDateTimePicker.Location = new System.Drawing.Point(93, 183);
-            this.eventDateTimePicker.MaxDate = new System.DateTime(2500, 12, 31, 0, 0, 0, 0);
-            this.eventDateTimePicker.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
-            this.eventDateTimePicker.Name = "eventDateTimePicker";
-            this.eventDateTimePicker.Size = new System.Drawing.Size(517, 21);
-            this.eventDateTimePicker.TabIndex = 3;
-            // 
-            // titleLabel
-            // 
-            this.titleLabel.Location = new System.Drawing.Point(3, 0);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(84, 30);
-            this.titleLabel.TabIndex = 1;
-            this.titleLabel.Text = "Title :";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.typeLabel.Location = new System.Drawing.Point(3, 60);
+            this.typeLabel.Name = "typeLabel";
+            this.typeLabel.Size = new System.Drawing.Size(83, 30);
+            this.typeLabel.TabIndex = 3;
+            this.typeLabel.Text = "Type :";
+            this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // titleErrorLabel
             // 
             this.titleErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.titleErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.titleErrorLabel.Location = new System.Drawing.Point(93, 30);
+            this.titleErrorLabel.Location = new System.Drawing.Point(92, 30);
             this.titleErrorLabel.Name = "titleErrorLabel";
-            this.titleErrorLabel.Size = new System.Drawing.Size(517, 30);
+            this.titleErrorLabel.Size = new System.Drawing.Size(518, 30);
             this.titleErrorLabel.TabIndex = 2;
             this.titleErrorLabel.Text = "Input is not valid. Enter event name.";
             this.titleErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // typeLabel
-            // 
-            this.typeLabel.Location = new System.Drawing.Point(3, 60);
-            this.typeLabel.Name = "typeLabel";
-            this.typeLabel.Size = new System.Drawing.Size(84, 30);
-            this.typeLabel.TabIndex = 3;
-            this.typeLabel.Text = "Type :";
-            this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // typeErrorLabel
             // 
             this.typeErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.typeErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.typeErrorLabel.Location = new System.Drawing.Point(93, 90);
+            this.typeErrorLabel.Location = new System.Drawing.Point(92, 90);
             this.typeErrorLabel.Name = "typeErrorLabel";
-            this.typeErrorLabel.Size = new System.Drawing.Size(517, 29);
+            this.typeErrorLabel.Size = new System.Drawing.Size(518, 29);
             this.typeErrorLabel.TabIndex = 4;
             this.typeErrorLabel.Text = "You have to choose event type.";
             this.typeErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,7 +124,7 @@
             // 
             this.locationLabel.Location = new System.Drawing.Point(3, 120);
             this.locationLabel.Name = "locationLabel";
-            this.locationLabel.Size = new System.Drawing.Size(84, 30);
+            this.locationLabel.Size = new System.Drawing.Size(83, 30);
             this.locationLabel.TabIndex = 5;
             this.locationLabel.Text = "Location :";
             this.locationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -158,18 +134,42 @@
             this.locationErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.locationErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.locationErrorLabel.Location = new System.Drawing.Point(93, 150);
+            this.locationErrorLabel.Location = new System.Drawing.Point(92, 150);
             this.locationErrorLabel.Name = "locationErrorLabel";
-            this.locationErrorLabel.Size = new System.Drawing.Size(517, 30);
+            this.locationErrorLabel.Size = new System.Drawing.Size(518, 30);
             this.locationErrorLabel.TabIndex = 6;
             this.locationErrorLabel.Text = "Input is not valid. Enter location where event will be held.";
             this.locationErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.Location = new System.Drawing.Point(3, 0);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(83, 30);
+            this.titleLabel.TabIndex = 1;
+            this.titleLabel.Text = "Title :";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // eventDateTimePicker
+            // 
+            this.eventDateTimePicker.AllowDrop = true;
+            this.eventDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.eventDateTimePicker.CustomFormat = "                                  dd/MM/yyyy                                     " +
+    "        HH:mm:ss";
+            this.eventDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.eventDateTimePicker.Location = new System.Drawing.Point(92, 183);
+            this.eventDateTimePicker.MaxDate = new System.DateTime(2500, 12, 31, 0, 0, 0, 0);
+            this.eventDateTimePicker.MinDate = new System.DateTime(2017, 1, 1, 0, 0, 0, 0);
+            this.eventDateTimePicker.Name = "eventDateTimePicker";
+            this.eventDateTimePicker.Size = new System.Drawing.Size(518, 21);
+            this.eventDateTimePicker.TabIndex = 3;
             // 
             // dateTimeLabel
             // 
             this.dateTimeLabel.Location = new System.Drawing.Point(3, 180);
             this.dateTimeLabel.Name = "dateTimeLabel";
-            this.dateTimeLabel.Size = new System.Drawing.Size(84, 30);
+            this.dateTimeLabel.Size = new System.Drawing.Size(83, 30);
             this.dateTimeLabel.TabIndex = 7;
             this.dateTimeLabel.Text = "Date/Time :";
             this.dateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,6 +186,17 @@
             this.descriptionPanel.Name = "descriptionPanel";
             this.descriptionPanel.Size = new System.Drawing.Size(607, 155);
             this.descriptionPanel.TabIndex = 8;
+            // 
+            // descriptionTextBox
+            // 
+            this.descriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.descriptionTextBox.Location = new System.Drawing.Point(4, 47);
+            this.descriptionTextBox.Multiline = true;
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(600, 105);
+            this.descriptionTextBox.TabIndex = 4;
             // 
             // descriptionLabel
             // 
@@ -207,17 +218,6 @@
             this.controlPanel.Size = new System.Drawing.Size(607, 47);
             this.controlPanel.TabIndex = 9;
             // 
-            // cancelButton
-            // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(529, 17);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 6;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -229,22 +229,33 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // cancelButton
+            // 
+            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.Location = new System.Drawing.Point(529, 17);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 6;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // titleTextBox
             // 
             this.titleTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.titleTextBox.Location = new System.Drawing.Point(93, 3);
+            this.titleTextBox.Location = new System.Drawing.Point(92, 3);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(517, 21);
+            this.titleTextBox.Size = new System.Drawing.Size(518, 21);
             this.titleTextBox.TabIndex = 0;
             // 
             // locationTextBox
             // 
             this.locationTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.locationTextBox.Location = new System.Drawing.Point(93, 123);
+            this.locationTextBox.Location = new System.Drawing.Point(92, 123);
             this.locationTextBox.Name = "locationTextBox";
-            this.locationTextBox.Size = new System.Drawing.Size(517, 21);
+            this.locationTextBox.Size = new System.Drawing.Size(518, 21);
             this.locationTextBox.TabIndex = 2;
             // 
             // typeComboBox
@@ -253,21 +264,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.typeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.typeComboBox.FormattingEnabled = true;
-            this.typeComboBox.Location = new System.Drawing.Point(93, 63);
+            this.typeComboBox.Location = new System.Drawing.Point(92, 63);
             this.typeComboBox.Name = "typeComboBox";
-            this.typeComboBox.Size = new System.Drawing.Size(517, 23);
+            this.typeComboBox.Size = new System.Drawing.Size(518, 23);
             this.typeComboBox.TabIndex = 1;
-            // 
-            // descriptionTextBox
-            // 
-            this.descriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.descriptionTextBox.Location = new System.Drawing.Point(4, 47);
-            this.descriptionTextBox.Multiline = true;
-            this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(600, 105);
-            this.descriptionTextBox.TabIndex = 4;
             // 
             // EventForm
             // 

@@ -8,20 +8,20 @@ using System.Windows.Forms;
 
 namespace EMS.Util
 {
-    public class EventManager
+    public class ActivityManager
     {
         private EMSEntities entities;
 
-        public EventManager(EMSEntities entities)
+        public ActivityManager(EMSEntities entities)
         {
             this.entities = entities;
         }
 
-        public void addEvent(Event e)
+        public void addActivity(Activity a)
         {
             try
             {
-                entities.Events.Add(e);
+                entities.Activities.Add(a);
                 entities.SaveChangesAsync();
             }
             catch (Exception)
@@ -30,9 +30,9 @@ namespace EMS.Util
             }
         }
 
-        public List<EventType> getEventTypes()
+        public List<ActivityType> getActivityTypes()
         {
-            return entities.EventTypes.ToList();
+            return entities.ActivityTypes.ToList();
         }
     }
 }

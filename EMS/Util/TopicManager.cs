@@ -8,20 +8,20 @@ using System.Windows.Forms;
 
 namespace EMS.Util
 {
-    public class EventManager
+    public class TopicManager
     {
         private EMSEntities entities;
 
-        public EventManager(EMSEntities entities)
+        public TopicManager(EMSEntities entities)
         {
             this.entities = entities;
         }
 
-        public void addEvent(Event e)
+        public void addTopic(Topic e)
         {
             try
             {
-                entities.Events.Add(e);
+                entities.Topics.Add(e);
                 entities.SaveChangesAsync();
             }
             catch (Exception)
@@ -30,9 +30,9 @@ namespace EMS.Util
             }
         }
 
-        public List<EventType> getEventTypes()
+        public List<TopicType> getTopicTypes()
         {
-            return entities.EventTypes.ToList();
+            return entities.TopicTypes.ToList();
         }
     }
 }

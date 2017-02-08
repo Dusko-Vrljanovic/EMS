@@ -104,7 +104,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ActivityManager.cs" />
     <Compile Include="Util\EventManager.cs" />
+    <Compile Include="Util\TopicManager.cs" />
     <Compile Include="View\EventForm.cs">
       <SubType>Form</SubType>
     </Compile>
