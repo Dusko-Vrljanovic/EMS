@@ -64,6 +64,17 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.viewTopicAndActivitiesButton = new System.Windows.Forms.Button();
+            this.activitiesMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.topicMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.topicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNewTopicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editTopicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletTopicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.treeListView = new BrightIdeasSoftware.TreeListView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
@@ -73,29 +84,18 @@
             this.deleteTopicButton = new System.Windows.Forms.Button();
             this.viewTopicButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.topicMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.topicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewTopicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editTopicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deletTopicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activitiesMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.activitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addNewActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteActivityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.treeListView = new BrightIdeasSoftware.TreeListView();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            this.activitiesMenuStrip.SuspendLayout();
+            this.topicMenuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.topicMenuStrip.SuspendLayout();
-            this.activitiesMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -366,7 +366,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.19684F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.80316F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
             this.tableLayoutPanel7.Controls.Add(this.viewTopicAndActivitiesButton, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.activitiesMenuStrip, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.topicMenuStrip, 0, 0);
@@ -379,12 +379,100 @@
             // 
             // viewTopicAndActivitiesButton
             // 
-            this.viewTopicAndActivitiesButton.Location = new System.Drawing.Point(566, 3);
+            this.viewTopicAndActivitiesButton.Location = new System.Drawing.Point(565, 3);
             this.viewTopicAndActivitiesButton.Name = "viewTopicAndActivitiesButton";
             this.viewTopicAndActivitiesButton.Size = new System.Drawing.Size(55, 23);
             this.viewTopicAndActivitiesButton.TabIndex = 0;
             this.viewTopicAndActivitiesButton.Text = "View";
             this.viewTopicAndActivitiesButton.UseVisualStyleBackColor = true;
+            // 
+            // activitiesMenuStrip
+            // 
+            this.activitiesMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.activitiesToolStripMenuItem});
+            this.activitiesMenuStrip.Location = new System.Drawing.Point(293, 0);
+            this.activitiesMenuStrip.Name = "activitiesMenuStrip";
+            this.activitiesMenuStrip.Size = new System.Drawing.Size(269, 24);
+            this.activitiesMenuStrip.TabIndex = 2;
+            this.activitiesMenuStrip.Text = "menuStrip3";
+            // 
+            // activitiesToolStripMenuItem
+            // 
+            this.activitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewActivityToolStripMenuItem,
+            this.editActivityToolStripMenuItem,
+            this.deleteActivityToolStripMenuItem});
+            this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
+            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.activitiesToolStripMenuItem.Text = "Activities";
+            // 
+            // addNewActivityToolStripMenuItem
+            // 
+            this.addNewActivityToolStripMenuItem.Name = "addNewActivityToolStripMenuItem";
+            this.addNewActivityToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addNewActivityToolStripMenuItem.Text = "Add new activity";
+            // 
+            // editActivityToolStripMenuItem
+            // 
+            this.editActivityToolStripMenuItem.Name = "editActivityToolStripMenuItem";
+            this.editActivityToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.editActivityToolStripMenuItem.Text = "Edit activity";
+            // 
+            // deleteActivityToolStripMenuItem
+            // 
+            this.deleteActivityToolStripMenuItem.Name = "deleteActivityToolStripMenuItem";
+            this.deleteActivityToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.deleteActivityToolStripMenuItem.Text = "Delete activity";
+            // 
+            // topicMenuStrip
+            // 
+            this.topicMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.topicsToolStripMenuItem});
+            this.topicMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.topicMenuStrip.Name = "topicMenuStrip";
+            this.topicMenuStrip.Size = new System.Drawing.Size(293, 24);
+            this.topicMenuStrip.TabIndex = 1;
+            this.topicMenuStrip.Text = "menuStrip2";
+            // 
+            // topicsToolStripMenuItem
+            // 
+            this.topicsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewTopicToolStripMenuItem,
+            this.editTopicToolStripMenuItem,
+            this.deletTopicToolStripMenuItem});
+            this.topicsToolStripMenuItem.Name = "topicsToolStripMenuItem";
+            this.topicsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.topicsToolStripMenuItem.Text = "Topics";
+            // 
+            // addNewTopicToolStripMenuItem
+            // 
+            this.addNewTopicToolStripMenuItem.Name = "addNewTopicToolStripMenuItem";
+            this.addNewTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addNewTopicToolStripMenuItem.Text = "Add new topic";
+            // 
+            // editTopicToolStripMenuItem
+            // 
+            this.editTopicToolStripMenuItem.Name = "editTopicToolStripMenuItem";
+            this.editTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editTopicToolStripMenuItem.Text = "Edit topic";
+            // 
+            // deletTopicToolStripMenuItem
+            // 
+            this.deletTopicToolStripMenuItem.Name = "deletTopicToolStripMenuItem";
+            this.deletTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deletTopicToolStripMenuItem.Text = "Delet topic";
+            // 
+            // treeListView
+            // 
+            this.treeListView.CellEditUseWholeCell = false;
+            this.treeListView.Location = new System.Drawing.Point(3, 38);
+            this.treeListView.Name = "treeListView";
+            this.treeListView.ShowGroups = false;
+            this.treeListView.Size = new System.Drawing.Size(626, 192);
+            this.treeListView.TabIndex = 1;
+            this.treeListView.UseCompatibleStateImageBehavior = false;
+            this.treeListView.View = System.Windows.Forms.View.Details;
+            this.treeListView.VirtualMode = true;
             // 
             // tableLayoutPanel2
             // 
@@ -430,7 +518,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.4F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.6F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
             this.tableLayoutPanel5.Controls.Add(this.addEventButton, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.editEventButton, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.deleteTopicButton, 2, 0);
@@ -446,14 +534,15 @@
             // 
             this.addEventButton.Location = new System.Drawing.Point(3, 3);
             this.addEventButton.Name = "addEventButton";
-            this.addEventButton.Size = new System.Drawing.Size(56, 20);
+            this.addEventButton.Size = new System.Drawing.Size(55, 20);
             this.addEventButton.TabIndex = 0;
             this.addEventButton.Text = "Add";
             this.addEventButton.UseVisualStyleBackColor = true;
+            this.addEventButton.Click += new System.EventHandler(this.addEventButton_Click);
             // 
             // editEventButton
             // 
-            this.editEventButton.Location = new System.Drawing.Point(65, 3);
+            this.editEventButton.Location = new System.Drawing.Point(64, 3);
             this.editEventButton.Name = "editEventButton";
             this.editEventButton.Size = new System.Drawing.Size(55, 20);
             this.editEventButton.TabIndex = 1;
@@ -462,7 +551,7 @@
             // 
             // deleteTopicButton
             // 
-            this.deleteTopicButton.Location = new System.Drawing.Point(126, 3);
+            this.deleteTopicButton.Location = new System.Drawing.Point(125, 3);
             this.deleteTopicButton.Name = "deleteTopicButton";
             this.deleteTopicButton.Size = new System.Drawing.Size(59, 20);
             this.deleteTopicButton.TabIndex = 2;
@@ -471,7 +560,7 @@
             // 
             // viewTopicButton
             // 
-            this.viewTopicButton.Location = new System.Drawing.Point(191, 3);
+            this.viewTopicButton.Location = new System.Drawing.Point(190, 3);
             this.viewTopicButton.Name = "viewTopicButton";
             this.viewTopicButton.Size = new System.Drawing.Size(54, 20);
             this.viewTopicButton.TabIndex = 3;
@@ -495,94 +584,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 430);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // topicMenuStrip
-            // 
-            this.topicMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.topicsToolStripMenuItem});
-            this.topicMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.topicMenuStrip.Name = "topicMenuStrip";
-            this.topicMenuStrip.Size = new System.Drawing.Size(294, 24);
-            this.topicMenuStrip.TabIndex = 1;
-            this.topicMenuStrip.Text = "menuStrip2";
-            // 
-            // topicsToolStripMenuItem
-            // 
-            this.topicsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewTopicToolStripMenuItem,
-            this.editTopicToolStripMenuItem,
-            this.deletTopicToolStripMenuItem});
-            this.topicsToolStripMenuItem.Name = "topicsToolStripMenuItem";
-            this.topicsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.topicsToolStripMenuItem.Text = "Topics";
-            // 
-            // addNewTopicToolStripMenuItem
-            // 
-            this.addNewTopicToolStripMenuItem.Name = "addNewTopicToolStripMenuItem";
-            this.addNewTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.addNewTopicToolStripMenuItem.Text = "Add new topic";
-            // 
-            // editTopicToolStripMenuItem
-            // 
-            this.editTopicToolStripMenuItem.Name = "editTopicToolStripMenuItem";
-            this.editTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.editTopicToolStripMenuItem.Text = "Edit topic";
-            // 
-            // deletTopicToolStripMenuItem
-            // 
-            this.deletTopicToolStripMenuItem.Name = "deletTopicToolStripMenuItem";
-            this.deletTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.deletTopicToolStripMenuItem.Text = "Delet topic";
-            // 
-            // activitiesMenuStrip
-            // 
-            this.activitiesMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.activitiesToolStripMenuItem});
-            this.activitiesMenuStrip.Location = new System.Drawing.Point(294, 0);
-            this.activitiesMenuStrip.Name = "activitiesMenuStrip";
-            this.activitiesMenuStrip.Size = new System.Drawing.Size(269, 24);
-            this.activitiesMenuStrip.TabIndex = 2;
-            this.activitiesMenuStrip.Text = "menuStrip3";
-            // 
-            // activitiesToolStripMenuItem
-            // 
-            this.activitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewActivityToolStripMenuItem,
-            this.editActivityToolStripMenuItem,
-            this.deleteActivityToolStripMenuItem});
-            this.activitiesToolStripMenuItem.Name = "activitiesToolStripMenuItem";
-            this.activitiesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.activitiesToolStripMenuItem.Text = "Activities";
-            // 
-            // addNewActivityToolStripMenuItem
-            // 
-            this.addNewActivityToolStripMenuItem.Name = "addNewActivityToolStripMenuItem";
-            this.addNewActivityToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.addNewActivityToolStripMenuItem.Text = "Add new activity";
-            // 
-            // editActivityToolStripMenuItem
-            // 
-            this.editActivityToolStripMenuItem.Name = "editActivityToolStripMenuItem";
-            this.editActivityToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.editActivityToolStripMenuItem.Text = "Edit activity";
-            // 
-            // deleteActivityToolStripMenuItem
-            // 
-            this.deleteActivityToolStripMenuItem.Name = "deleteActivityToolStripMenuItem";
-            this.deleteActivityToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.deleteActivityToolStripMenuItem.Text = "Delete activity";
-            // 
-            // treeListView
-            // 
-            this.treeListView.CellEditUseWholeCell = false;
-            this.treeListView.Location = new System.Drawing.Point(3, 38);
-            this.treeListView.Name = "treeListView";
-            this.treeListView.ShowGroups = false;
-            this.treeListView.Size = new System.Drawing.Size(626, 192);
-            this.treeListView.TabIndex = 1;
-            this.treeListView.UseCompatibleStateImageBehavior = false;
-            this.treeListView.View = System.Windows.Forms.View.Details;
-            this.treeListView.VirtualMode = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,16 +601,16 @@
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            this.activitiesMenuStrip.ResumeLayout(false);
+            this.activitiesMenuStrip.PerformLayout();
+            this.topicMenuStrip.ResumeLayout(false);
+            this.topicMenuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.topicMenuStrip.ResumeLayout(false);
-            this.topicMenuStrip.PerformLayout();
-            this.activitiesMenuStrip.ResumeLayout(false);
-            this.activitiesMenuStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.treeListView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
