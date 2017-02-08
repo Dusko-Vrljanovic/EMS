@@ -11,6 +11,7 @@ namespace EMS.Util
     public class EventManager
     {
         private EMSEntities entities;
+        private Event e;
 
         public EventManager(EMSEntities entities)
         {
@@ -19,6 +20,7 @@ namespace EMS.Util
 
         public void addEvent(Event e)
         {
+            this.e = e;
             try
             {
                 entities.Events.Add(e);
@@ -33,6 +35,16 @@ namespace EMS.Util
         public List<EventType> getEventTypes()
         {
             return entities.EventTypes.ToList();
+        }
+
+        public List<Event> getEvents()
+        {
+            return entities.Events.ToList();
+        }
+
+        public Event getLastEvent()
+        {
+            return e;
         }
     }
 }

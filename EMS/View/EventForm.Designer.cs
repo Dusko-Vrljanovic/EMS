@@ -81,9 +81,9 @@
             this.eventTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.eventTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.eventTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.eventTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.eventTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 161F));
-            this.eventTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.eventTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.eventTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 180F));
+            this.eventTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.eventTableLayout.Size = new System.Drawing.Size(613, 426);
             this.eventTableLayout.TabIndex = 0;
             // 
@@ -169,7 +169,7 @@
             // 
             this.dateTimeLabel.Location = new System.Drawing.Point(3, 180);
             this.dateTimeLabel.Name = "dateTimeLabel";
-            this.dateTimeLabel.Size = new System.Drawing.Size(83, 30);
+            this.dateTimeLabel.Size = new System.Drawing.Size(83, 26);
             this.dateTimeLabel.TabIndex = 7;
             this.dateTimeLabel.Text = "Date/Time :";
             this.dateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -182,9 +182,9 @@
             this.eventTableLayout.SetColumnSpan(this.descriptionPanel, 2);
             this.descriptionPanel.Controls.Add(this.descriptionTextBox);
             this.descriptionPanel.Controls.Add(this.descriptionLabel);
-            this.descriptionPanel.Location = new System.Drawing.Point(3, 213);
+            this.descriptionPanel.Location = new System.Drawing.Point(3, 209);
             this.descriptionPanel.Name = "descriptionPanel";
-            this.descriptionPanel.Size = new System.Drawing.Size(607, 155);
+            this.descriptionPanel.Size = new System.Drawing.Size(607, 174);
             this.descriptionPanel.TabIndex = 8;
             // 
             // descriptionTextBox
@@ -192,15 +192,15 @@
             this.descriptionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.descriptionTextBox.Location = new System.Drawing.Point(4, 47);
+            this.descriptionTextBox.Location = new System.Drawing.Point(0, 37);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(600, 105);
+            this.descriptionTextBox.Size = new System.Drawing.Size(600, 134);
             this.descriptionTextBox.TabIndex = 4;
             // 
             // descriptionLabel
             // 
-            this.descriptionLabel.Location = new System.Drawing.Point(0, 9);
+            this.descriptionLabel.Location = new System.Drawing.Point(0, 0);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(80, 34);
             this.descriptionLabel.TabIndex = 0;
@@ -213,15 +213,15 @@
             this.eventTableLayout.SetColumnSpan(this.controlPanel, 2);
             this.controlPanel.Controls.Add(this.saveButton);
             this.controlPanel.Controls.Add(this.cancelButton);
-            this.controlPanel.Location = new System.Drawing.Point(3, 376);
+            this.controlPanel.Location = new System.Drawing.Point(3, 389);
             this.controlPanel.Name = "controlPanel";
-            this.controlPanel.Size = new System.Drawing.Size(607, 47);
+            this.controlPanel.Size = new System.Drawing.Size(607, 34);
             this.controlPanel.TabIndex = 9;
             // 
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveButton.Location = new System.Drawing.Point(448, 17);
+            this.saveButton.Location = new System.Drawing.Point(448, 4);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
             this.saveButton.TabIndex = 5;
@@ -232,7 +232,7 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(529, 17);
+            this.cancelButton.Location = new System.Drawing.Point(529, 4);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 6;

@@ -13,27 +13,27 @@ using System.Threading;
 
 namespace EMS.View
 {
-    public partial class EventForm : Form
+    public partial class ActivityForm : Form
     {
-        private EventManager eM;
+        private ActivityManager aM;
 
-        public EventForm(EventManager e)
+        public ActivityForm(ActivityManager a)
         {
             InitializeComponent();
-            eM = e;
-            typeComboBox.DataSource = eM.getEventTypes();
+            aM = a;
+            typeComboBox.DataSource = aM.getActivityTypes();
         }
 
-        private void EventForm_Load(object sender, EventArgs e)
+        private void ActivityForm_Load(object sender, EventArgs e)
         {
             hideErrors(); 
         }
 
         private void hideErrors()
         {
-            eventTableLayout.RowStyles[1].Height = 0;
-            eventTableLayout.RowStyles[3].Height = 0;
-            eventTableLayout.RowStyles[5].Height = 0;
+            activityTableLayout.RowStyles[1].Height = 0;
+            activityTableLayout.RowStyles[3].Height = 0;
+            activityTableLayout.RowStyles[5].Height = 0;
         }
 
         private bool checkForErrors()
@@ -42,17 +42,17 @@ namespace EMS.View
             bool hasErrors = false;
             if(titleTextBox.Text == "")
             {
-                eventTableLayout.RowStyles[1].Height = 30;
+                activityTableLayout.RowStyles[1].Height = 30;
                 hasErrors = true;
             }
             if(typeComboBox.SelectedIndex == -1)
             {
-                eventTableLayout.RowStyles[3].Height = 30;
+                activityTableLayout.RowStyles[3].Height = 30;
                 hasErrors = true;
             }
             if (locationTextBox.Text == "")
             {
-                eventTableLayout.RowStyles[5].Height = 30;
+                activityTableLayout.RowStyles[5].Height = 30;
                 hasErrors = true;
             }
             return hasErrors;
@@ -62,15 +62,15 @@ namespace EMS.View
         {
             if (!checkForErrors())
             {
-                Event ev = new Event();
-                ev.Title = titleTextBox.Text;
-                ev.TypeID = ((EventType)typeComboBox.SelectedItem).ID;
-                ev.Location = locationTextBox.Text;
-                ev.Date = eventDateTimePicker.Value;
-                ev.Description = descriptionTextBox.Text;
+                Activity a = new Activity();
+                a.Title = titleTextBox.Text;
+                a.TypeID = ((ActivityType)typeComboBox.SelectedItem).ID;
+                a.Location = locationTextBox.Text;
+                a.Date = activityDateTimePicker.Value;
+                a.Description = descriptionTextBox.Text;
                 new Thread(() =>
                 {
-                    eM.addEvent(ev);
+                    aM.addActivity(a);
                 }).Start();
                 DialogResult = DialogResult.OK;
                 this.Close();

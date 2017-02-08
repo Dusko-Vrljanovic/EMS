@@ -68,6 +68,7 @@ namespace EMS.View
                 ev.Location = locationTextBox.Text;
                 ev.Date = eventDateTimePicker.Value;
                 ev.Description = descriptionTextBox.Text;
+                ev.Active = true;
                 new Thread(() =>
                 {
                     eM.addEvent(ev);

@@ -77,13 +77,15 @@
             this.treeListView = new BrightIdeasSoftware.TreeListView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.addEventButton = new System.Windows.Forms.Button();
             this.editEventButton = new System.Windows.Forms.Button();
             this.deleteTopicButton = new System.Windows.Forms.Button();
             this.viewTopicButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.eventListView = new BrightIdeasSoftware.DataListView();
+            this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.title = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -93,9 +95,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.treeListView)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eventListView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -107,8 +110,9 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(912, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1064, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -339,12 +343,12 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(271, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(316, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.86792F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.13208F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(638, 424);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(744, 489);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel6
@@ -353,12 +357,12 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.treeListView, 0, 1);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 188);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 217);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.45064F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.54935F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(632, 233);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(737, 269);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // tableLayoutPanel7
@@ -366,7 +370,7 @@
             this.tableLayoutPanel7.ColumnCount = 3;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.19684F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.80316F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.tableLayoutPanel7.Controls.Add(this.viewTopicAndActivitiesButton, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.activitiesMenuStrip, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.topicMenuStrip, 0, 0);
@@ -374,14 +378,14 @@
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(626, 29);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(730, 33);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // viewTopicAndActivitiesButton
             // 
-            this.viewTopicAndActivitiesButton.Location = new System.Drawing.Point(565, 3);
+            this.viewTopicAndActivitiesButton.Location = new System.Drawing.Point(655, 3);
             this.viewTopicAndActivitiesButton.Name = "viewTopicAndActivitiesButton";
-            this.viewTopicAndActivitiesButton.Size = new System.Drawing.Size(55, 23);
+            this.viewTopicAndActivitiesButton.Size = new System.Drawing.Size(64, 27);
             this.viewTopicAndActivitiesButton.TabIndex = 0;
             this.viewTopicAndActivitiesButton.Text = "View";
             this.viewTopicAndActivitiesButton.UseVisualStyleBackColor = true;
@@ -390,9 +394,10 @@
             // 
             this.activitiesMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.activitiesToolStripMenuItem});
-            this.activitiesMenuStrip.Location = new System.Drawing.Point(293, 0);
+            this.activitiesMenuStrip.Location = new System.Drawing.Point(340, 0);
             this.activitiesMenuStrip.Name = "activitiesMenuStrip";
-            this.activitiesMenuStrip.Size = new System.Drawing.Size(269, 24);
+            this.activitiesMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.activitiesMenuStrip.Size = new System.Drawing.Size(312, 24);
             this.activitiesMenuStrip.TabIndex = 2;
             this.activitiesMenuStrip.Text = "menuStrip3";
             // 
@@ -411,6 +416,7 @@
             this.addNewActivityToolStripMenuItem.Name = "addNewActivityToolStripMenuItem";
             this.addNewActivityToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.addNewActivityToolStripMenuItem.Text = "Add new activity";
+            this.addNewActivityToolStripMenuItem.Click += new System.EventHandler(this.addNewActivityToolStripMenuItem_Click);
             // 
             // editActivityToolStripMenuItem
             // 
@@ -430,7 +436,8 @@
             this.topicsToolStripMenuItem});
             this.topicMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.topicMenuStrip.Name = "topicMenuStrip";
-            this.topicMenuStrip.Size = new System.Drawing.Size(293, 24);
+            this.topicMenuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.topicMenuStrip.Size = new System.Drawing.Size(340, 24);
             this.topicMenuStrip.TabIndex = 1;
             this.topicMenuStrip.Text = "menuStrip2";
             // 
@@ -447,28 +454,29 @@
             // addNewTopicToolStripMenuItem
             // 
             this.addNewTopicToolStripMenuItem.Name = "addNewTopicToolStripMenuItem";
-            this.addNewTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addNewTopicToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.addNewTopicToolStripMenuItem.Text = "Add new topic";
+            this.addNewTopicToolStripMenuItem.Click += new System.EventHandler(this.addNewTopicToolStripMenuItem_Click);
             // 
             // editTopicToolStripMenuItem
             // 
             this.editTopicToolStripMenuItem.Name = "editTopicToolStripMenuItem";
-            this.editTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editTopicToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.editTopicToolStripMenuItem.Text = "Edit topic";
             // 
             // deletTopicToolStripMenuItem
             // 
             this.deletTopicToolStripMenuItem.Name = "deletTopicToolStripMenuItem";
-            this.deletTopicToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deletTopicToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.deletTopicToolStripMenuItem.Text = "Delet topic";
             // 
             // treeListView
             // 
             this.treeListView.CellEditUseWholeCell = false;
-            this.treeListView.Location = new System.Drawing.Point(3, 38);
+            this.treeListView.Location = new System.Drawing.Point(3, 44);
             this.treeListView.Name = "treeListView";
             this.treeListView.ShowGroups = false;
-            this.treeListView.Size = new System.Drawing.Size(626, 192);
+            this.treeListView.Size = new System.Drawing.Size(730, 221);
             this.treeListView.TabIndex = 1;
             this.treeListView.UseCompatibleStateImageBehavior = false;
             this.treeListView.View = System.Windows.Forms.View.Details;
@@ -484,41 +492,30 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.36792F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.63208F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(262, 424);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(306, 489);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.objectListView1, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.eventListView, 0, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.96648F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.03352F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(256, 232);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(299, 268);
             this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // objectListView1
-            // 
-            this.objectListView1.CellEditUseWholeCell = false;
-            this.objectListView1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objectListView1.Location = new System.Drawing.Point(3, 35);
-            this.objectListView1.Name = "objectListView1";
-            this.objectListView1.Size = new System.Drawing.Size(250, 194);
-            this.objectListView1.TabIndex = 0;
-            this.objectListView1.UseCompatibleStateImageBehavior = false;
-            this.objectListView1.View = System.Windows.Forms.View.Details;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 4;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.4F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.6F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel5.Controls.Add(this.addEventButton, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.editEventButton, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.deleteTopicButton, 2, 0);
@@ -527,14 +524,14 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(250, 26);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(292, 30);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // addEventButton
             // 
             this.addEventButton.Location = new System.Drawing.Point(3, 3);
             this.addEventButton.Name = "addEventButton";
-            this.addEventButton.Size = new System.Drawing.Size(55, 20);
+            this.addEventButton.Size = new System.Drawing.Size(63, 23);
             this.addEventButton.TabIndex = 0;
             this.addEventButton.Text = "Add";
             this.addEventButton.UseVisualStyleBackColor = true;
@@ -542,27 +539,27 @@
             // 
             // editEventButton
             // 
-            this.editEventButton.Location = new System.Drawing.Point(64, 3);
+            this.editEventButton.Location = new System.Drawing.Point(73, 3);
             this.editEventButton.Name = "editEventButton";
-            this.editEventButton.Size = new System.Drawing.Size(55, 20);
+            this.editEventButton.Size = new System.Drawing.Size(63, 23);
             this.editEventButton.TabIndex = 1;
             this.editEventButton.Text = "Edit";
             this.editEventButton.UseVisualStyleBackColor = true;
             // 
             // deleteTopicButton
             // 
-            this.deleteTopicButton.Location = new System.Drawing.Point(125, 3);
+            this.deleteTopicButton.Location = new System.Drawing.Point(142, 3);
             this.deleteTopicButton.Name = "deleteTopicButton";
-            this.deleteTopicButton.Size = new System.Drawing.Size(59, 20);
+            this.deleteTopicButton.Size = new System.Drawing.Size(69, 23);
             this.deleteTopicButton.TabIndex = 2;
             this.deleteTopicButton.Text = "Delete";
             this.deleteTopicButton.UseVisualStyleBackColor = true;
             // 
             // viewTopicButton
             // 
-            this.viewTopicButton.Location = new System.Drawing.Point(190, 3);
+            this.viewTopicButton.Location = new System.Drawing.Point(218, 3);
             this.viewTopicButton.Name = "viewTopicButton";
-            this.viewTopicButton.Size = new System.Drawing.Size(54, 20);
+            this.viewTopicButton.Size = new System.Drawing.Size(63, 23);
             this.viewTopicButton.TabIndex = 3;
             this.viewTopicButton.Text = "View";
             this.viewTopicButton.UseVisualStyleBackColor = true;
@@ -574,23 +571,51 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 644F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 751F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 28);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 32);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 430);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1064, 496);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // eventListView
+            // 
+            this.eventListView.AllColumns.Add(this.title);
+            this.eventListView.AutoGenerateColumns = false;
+            this.eventListView.CellEditUseWholeCell = false;
+            this.eventListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.title});
+            this.eventListView.DataSource = null;
+            this.eventListView.FullRowSelect = true;
+            this.eventListView.GridLines = true;
+            this.eventListView.Location = new System.Drawing.Point(3, 40);
+            this.eventListView.Name = "eventListView";
+            this.eventListView.ShowGroups = false;
+            this.eventListView.Size = new System.Drawing.Size(293, 225);
+            this.eventListView.TabIndex = 2;
+            this.eventListView.UseCompatibleStateImageBehavior = false;
+            this.eventListView.View = System.Windows.Forms.View.Details;
+            // 
+            // title
+            // 
+            this.title.AspectName = "Title";
+            this.title.IsEditable = false;
+            this.title.MaximumWidth = 291;
+            this.title.MinimumWidth = 291;
+            this.title.Text = "Title";
+            this.title.Width = 291;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(912, 470);
+            this.ClientSize = new System.Drawing.Size(1064, 542);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Event Managment System";
@@ -608,9 +633,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.treeListView)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.eventListView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -652,7 +678,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private BrightIdeasSoftware.ObjectListView objectListView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button addEventButton;
         private System.Windows.Forms.Button editEventButton;
@@ -672,6 +697,9 @@
         private System.Windows.Forms.ToolStripMenuItem editTopicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deletTopicToolStripMenuItem;
         private BrightIdeasSoftware.TreeListView treeListView;
+        private BrightIdeasSoftware.DataListView eventListView;
+        private System.Windows.Forms.BindingSource eventBindingSource;
+        private BrightIdeasSoftware.OLVColumn title;
     }
 }
 

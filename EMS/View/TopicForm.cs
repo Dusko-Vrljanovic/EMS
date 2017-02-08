@@ -13,27 +13,27 @@ using System.Threading;
 
 namespace EMS.View
 {
-    public partial class EventForm : Form
+    public partial class TopicForm : Form
     {
-        private EventManager eM;
+        private TopicManager tM;
 
-        public EventForm(EventManager e)
+        public TopicForm(TopicManager t)
         {
             InitializeComponent();
-            eM = e;
-            typeComboBox.DataSource = eM.getEventTypes();
+            tM = t;
+            typeComboBox.DataSource = tM.getTopicTypes();
         }
 
-        private void EventForm_Load(object sender, EventArgs e)
+        private void TopicForm_Load(object sender, EventArgs e)
         {
             hideErrors(); 
         }
 
         private void hideErrors()
         {
-            eventTableLayout.RowStyles[1].Height = 0;
-            eventTableLayout.RowStyles[3].Height = 0;
-            eventTableLayout.RowStyles[5].Height = 0;
+            topicTableLayout.RowStyles[1].Height = 0;
+            topicTableLayout.RowStyles[3].Height = 0;
+            topicTableLayout.RowStyles[5].Height = 0;
         }
 
         private bool checkForErrors()
@@ -42,17 +42,17 @@ namespace EMS.View
             bool hasErrors = false;
             if(titleTextBox.Text == "")
             {
-                eventTableLayout.RowStyles[1].Height = 30;
+                topicTableLayout.RowStyles[1].Height = 30;
                 hasErrors = true;
             }
             if(typeComboBox.SelectedIndex == -1)
             {
-                eventTableLayout.RowStyles[3].Height = 30;
+                topicTableLayout.RowStyles[3].Height = 30;
                 hasErrors = true;
             }
             if (locationTextBox.Text == "")
             {
-                eventTableLayout.RowStyles[5].Height = 30;
+                topicTableLayout.RowStyles[5].Height = 30;
                 hasErrors = true;
             }
             return hasErrors;
@@ -62,15 +62,15 @@ namespace EMS.View
         {
             if (!checkForErrors())
             {
-                Event ev = new Event();
-                ev.Title = titleTextBox.Text;
-                ev.TypeID = ((EventType)typeComboBox.SelectedItem).ID;
-                ev.Location = locationTextBox.Text;
-                ev.Date = eventDateTimePicker.Value;
-                ev.Description = descriptionTextBox.Text;
+                Topic t = new Topic();
+                t.Title = titleTextBox.Text;
+                t.TypeID = ((TopicType)typeComboBox.SelectedItem).ID;
+                t.Location = locationTextBox.Text;
+                t.Date = topicDateTimePicker.Value;
+                t.Description = descriptionTextBox.Text;
                 new Thread(() =>
                 {
-                    eM.addEvent(ev);
+                    tM.addTopic(t);
                 }).Start();
                 DialogResult = DialogResult.OK;
                 this.Close();
