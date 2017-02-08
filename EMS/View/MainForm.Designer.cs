@@ -80,8 +80,8 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.addEventButton = new System.Windows.Forms.Button();
             this.editEventButton = new System.Windows.Forms.Button();
-            this.deleteTopicButton = new System.Windows.Forms.Button();
-            this.viewTopicButton = new System.Windows.Forms.Button();
+            this.deleteEventButton = new System.Windows.Forms.Button();
+            this.viewEventButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.eventListView = new BrightIdeasSoftware.DataListView();
             this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -518,8 +518,8 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tableLayoutPanel5.Controls.Add(this.addEventButton, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.editEventButton, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.deleteTopicButton, 2, 0);
-            this.tableLayoutPanel5.Controls.Add(this.viewTopicButton, 3, 0);
+            this.tableLayoutPanel5.Controls.Add(this.deleteEventButton, 2, 0);
+            this.tableLayoutPanel5.Controls.Add(this.viewEventButton, 3, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
@@ -545,24 +545,26 @@
             this.editEventButton.TabIndex = 1;
             this.editEventButton.Text = "Edit";
             this.editEventButton.UseVisualStyleBackColor = true;
+            this.editEventButton.Click += new System.EventHandler(this.editEventButton_Click);
             // 
-            // deleteTopicButton
+            // deleteEventButton
             // 
-            this.deleteTopicButton.Location = new System.Drawing.Point(142, 3);
-            this.deleteTopicButton.Name = "deleteTopicButton";
-            this.deleteTopicButton.Size = new System.Drawing.Size(69, 23);
-            this.deleteTopicButton.TabIndex = 2;
-            this.deleteTopicButton.Text = "Delete";
-            this.deleteTopicButton.UseVisualStyleBackColor = true;
+            this.deleteEventButton.Location = new System.Drawing.Point(142, 3);
+            this.deleteEventButton.Name = "deleteEventButton";
+            this.deleteEventButton.Size = new System.Drawing.Size(69, 23);
+            this.deleteEventButton.TabIndex = 2;
+            this.deleteEventButton.Text = "Delete";
+            this.deleteEventButton.UseVisualStyleBackColor = true;
             // 
-            // viewTopicButton
+            // viewEventButton
             // 
-            this.viewTopicButton.Location = new System.Drawing.Point(218, 3);
-            this.viewTopicButton.Name = "viewTopicButton";
-            this.viewTopicButton.Size = new System.Drawing.Size(63, 23);
-            this.viewTopicButton.TabIndex = 3;
-            this.viewTopicButton.Text = "View";
-            this.viewTopicButton.UseVisualStyleBackColor = true;
+            this.viewEventButton.Location = new System.Drawing.Point(218, 3);
+            this.viewEventButton.Name = "viewEventButton";
+            this.viewEventButton.Size = new System.Drawing.Size(63, 23);
+            this.viewEventButton.TabIndex = 3;
+            this.viewEventButton.Text = "View";
+            this.viewEventButton.UseVisualStyleBackColor = true;
+            this.viewEventButton.Click += new System.EventHandler(this.viewEventButton_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -598,6 +600,8 @@
             this.eventListView.TabIndex = 2;
             this.eventListView.UseCompatibleStateImageBehavior = false;
             this.eventListView.View = System.Windows.Forms.View.Details;
+            this.eventListView.SelectedIndexChanged += new System.EventHandler(this.eventListView_SelectedIndexChanged);
+            this.eventListView.DoubleClick += new System.EventHandler(this.eventListView_DoubleClick);
             // 
             // title
             // 
@@ -681,8 +685,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button addEventButton;
         private System.Windows.Forms.Button editEventButton;
-        private System.Windows.Forms.Button deleteTopicButton;
-        private System.Windows.Forms.Button viewTopicButton;
+        private System.Windows.Forms.Button deleteEventButton;
+        private System.Windows.Forms.Button viewEventButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.Button viewTopicAndActivitiesButton;

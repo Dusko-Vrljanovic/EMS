@@ -16,12 +16,29 @@ namespace EMS.View
     public partial class EventForm : Form
     {
         private EventManager eM;
+        private Event ev;
+        private bool edit;
 
         public EventForm(EventManager e)
         {
             InitializeComponent();
             eM = e;
             typeComboBox.DataSource = eM.getEventTypes();
+        }
+
+        public EventForm(EventManager e, Event ev, bool edit) : this(e)
+        {
+            this.ev = ev;
+            this.edit = edit;
+            if(edit == false)
+            {
+                saveButton.Hide();
+            }
+            titleTextBox.Text = ev.Title;
+            //todo combobox
+            locationTextBox.Text = ev.Location;
+            eventDateTimePicker.Value = (DateTime) ev.Date;
+            descriptionTextBox.Text = ev.Description;
         }
 
         private void EventForm_Load(object sender, EventArgs e)

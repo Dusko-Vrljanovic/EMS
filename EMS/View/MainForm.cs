@@ -32,6 +32,7 @@ namespace EMS.View
         {
             eventBindingSource.DataSource = eM.getEvents();
             eventListView.DataSource = eventBindingSource;
+            eventButtonEnabled(false);
         }
 
         private void addEventButton_Click(object sender, EventArgs e)
@@ -56,5 +57,42 @@ namespace EMS.View
             ActivityForm form = new ActivityForm(aM);
             DialogResult result = form.ShowDialog();
         }
+
+        private void editEventButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void viewEventButton_Click(object sender, EventArgs e)
+        {
+            Event ev = (Event) eventListView.SelectedObject;
+            EventForm form = new EventForm(eM, ev, false);
+            form.Enabled = false;
+            form.Show();
+        }
+
+        private void eventListView_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void eventListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(eventListView.SelectedIndex == -1)
+            {
+                eventButtonEnabled(false);
+            }else
+            {
+                eventButtonEnabled(true);
+            }
+
+        }
+
+        private void eventButtonEnabled(bool enabled)
+        {
+            editEventButton.Enabled = deleteEventButton.Enabled = viewEventButton.Enabled = enabled;
+        }
+
+        
     }
 }
