@@ -17,25 +17,23 @@ namespace EMS.View
     {
         private EventManager eM;
         private Event ev;
-        private bool edit;
 
         public EventForm(EventManager e)
         {
             InitializeComponent();
             eM = e;
             typeComboBox.DataSource = eM.getEventTypes();
+            Text = "Add new event";
         }
 
-        public EventForm(EventManager e, Event ev, bool edit) : this(e)
+        public EventForm(EventManager e, Event ev) : this(e)
         {
             this.ev = ev;
-            this.edit = edit;
-            if(edit == false)
-            {
-                saveButton.Hide();
-            }
+            eM = e;
+            Text = "Edit event";
             titleTextBox.Text = ev.Title;
-            //todo combobox
+            typeComboBox.DataSource = eM.getEventTypes();
+            typeComboBox.SelectedItem = ev.EventType;
             locationTextBox.Text = ev.Location;
             eventDateTimePicker.Value = (DateTime) ev.Date;
             descriptionTextBox.Text = ev.Description;
@@ -78,18 +76,28 @@ namespace EMS.View
         private void saveButton_Click(object sender, EventArgs e)
         {
             if (!checkForErrors())
-            {
-                Event ev = new Event();
-                ev.Title = titleTextBox.Text;
-                ev.TypeID = ((EventType)typeComboBox.SelectedItem).ID;
-                ev.Location = locationTextBox.Text;
-                ev.Date = eventDateTimePicker.Value;
-                ev.Description = descriptionTextBox.Text;
-                ev.Active = true;
-                new Thread(() =>
+            {     
+                if (Text == "Add new event")
                 {
+                    Event ev = new Event();
+                    ev.Title = titleTextBox.Text;
+                    ev.TypeID = ((EventType)typeComboBox.SelectedItem).ID;
+                    ev.Location = locationTextBox.Text;
+                    ev.Date = eventDateTimePicker.Value;
+                    ev.Description = descriptionTextBox.Text;
+                    ev.Active = true;
                     eM.addEvent(ev);
-                }).Start();
+                }
+                else
+                {
+                    ev.Title = titleTextBox.Text;
+                    ev.TypeID = ((EventType)typeComboBox.SelectedItem).ID;
+                    ev.Location = locationTextBox.Text;
+                    ev.Date = eventDateTimePicker.Value;
+                    ev.Description = descriptionTextBox.Text;
+                    ev.Active = true;
+                    eM.updateEvent(ev);
+                }
                 DialogResult = DialogResult.OK;
                 this.Close();
             }

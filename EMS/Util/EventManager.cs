@@ -24,11 +24,27 @@ namespace EMS.Util
             try
             {
                 entities.Events.Add(e);
-                entities.SaveChangesAsync();
+                entities.SaveChanges();
             }
             catch (Exception)
             {
-                MessageBox.Show("Uh, oh imamo Hjuston");
+                MessageBox.Show("Something went horribly wrong.");
+            }
+        }
+
+        public void updateEvent(Event e)
+        {
+            this.e = e;
+            try
+            {
+                entities.Events.Attach(e);
+                entities.Entry(e).State = System.Data.Entity.EntityState.Modified;
+                entities.SaveChanges();
+            }
+            catch (Exception)
+            {
+                entities.Entry(e).State = System.Data.Entity.EntityState.Detached;
+                MessageBox.Show("Something went horribly wrong.");
             }
         }
 
@@ -37,14 +53,37 @@ namespace EMS.Util
             return entities.EventTypes.ToList();
         }
 
+        public EventType getEventType(Event ev)
+        {
+            return entities.EventTypes.Find(ev.ID);
+        }
+
         public List<Event> getEvents()
         {
-            return entities.Events.ToList();
+            return entities.Events.Where(e => e.Active == true).ToList();
         }
 
         public Event getLastEvent()
         {
             return e;
+        }
+
+        public bool deleteEvent(Event ev)
+        {
+            ev.Active = false;
+            try
+            {
+                entities.Events.Attach(ev);
+                entities.Entry(ev).State = System.Data.Entity.EntityState.Modified;
+                entities.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                entities.Entry(ev).State = System.Data.Entity.EntityState.Detached;
+                MessageBox.Show("Something went horribly wrong.");
+                return false;
+            }
         }
     }
 }

@@ -16,12 +16,27 @@ namespace EMS.View
     public partial class TopicForm : Form
     {
         private TopicManager tM;
+        private Topic t;
+        private Event e;
 
-        public TopicForm(TopicManager t)
+        public TopicForm(TopicManager t, Event e)
         {
             InitializeComponent();
             tM = t;
+            this.e = e;
             typeComboBox.DataSource = tM.getTopicTypes();
+            Text = "Add new topic";
+        }
+        public TopicForm(TopicManager tM, Topic t, Event ev) : this(tM, ev)
+        {
+            this.t = t;
+            Text = "Edit topic";
+            titleTextBox.Text = t.Title;
+            typeComboBox.DataSource = tM.getTopicTypes();
+            typeComboBox.SelectedItem = t.TopicType;
+            locationTextBox.Text = t.Location;
+            topicDateTimePicker.Value = (DateTime)t.Date;
+            descriptionTextBox.Text = t.Description;
         }
 
         private void TopicForm_Load(object sender, EventArgs e)
@@ -62,16 +77,29 @@ namespace EMS.View
         {
             if (!checkForErrors())
             {
-                Topic t = new Topic();
-                t.Title = titleTextBox.Text;
-                t.TypeID = ((TopicType)typeComboBox.SelectedItem).ID;
-                t.Location = locationTextBox.Text;
-                t.Date = topicDateTimePicker.Value;
-                t.Description = descriptionTextBox.Text;
-                new Thread(() =>
+                if (Text == "Add new topic")
                 {
+                    Topic t = new Topic();
+                    t.Title = titleTextBox.Text;
+                    t.TypeID = ((TopicType)typeComboBox.SelectedItem).ID;
+                    t.Location = locationTextBox.Text;
+                    t.Date = topicDateTimePicker.Value;
+                    t.Description = descriptionTextBox.Text;
+                    t.Active = true;
+                    t.Event = this.e;
+                    t.EventID = this.e.ID;
                     tM.addTopic(t);
-                }).Start();
+                }
+                else
+                {
+                    t.Title = titleTextBox.Text;
+                    t.TypeID = ((TopicType)typeComboBox.SelectedItem).ID;
+                    t.Location = locationTextBox.Text;
+                    t.Date = topicDateTimePicker.Value;
+                    t.Description = descriptionTextBox.Text;
+                    t.Active = true;
+                    tM.updateTopic(t);
+                }
                 DialogResult = DialogResult.OK;
                 this.Close();
             }

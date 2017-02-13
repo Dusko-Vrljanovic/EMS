@@ -119,11 +119,17 @@
     <Compile Include="View\EventForm.Designer.cs">
       <DependentUpon>EventForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MainForm.cs">
+    <Compile Include="View\StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MainForm.designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="View\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TransparentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TransparentForm.Designer.cs">
+      <DependentUpon>TransparentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\TopicForm.cs">
       <SubType>Form</SubType>
@@ -146,8 +152,11 @@
     <EmbeddedResource Include="View\EventForm.resx">
       <DependentUpon>EventForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TransparentForm.resx">
+      <DependentUpon>TransparentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TopicForm.resx">
       <DependentUpon>TopicForm.cs</DependentUpon>
@@ -173,7 +182,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
