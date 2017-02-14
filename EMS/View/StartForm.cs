@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EMS.Util;
 using EMS.Model;
+using BrightIdeasSoftware;
 
 namespace EMS.View
 {
@@ -171,12 +172,12 @@ namespace EMS.View
 
         private void eventSearchTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            searchEvents();
         }
 
         private void topicSearchTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            searchTopics();
         }
 
         private void viewTopicButton_Click(object sender, EventArgs e)
@@ -185,6 +186,26 @@ namespace EMS.View
             new TopicDetailViewForm(this, (Topic)topicDataListView.SelectedObject, aM).ShowDialog();
             this.Show();
 
+        }
+
+        private void searchEvents()
+        {
+            eventListView.UseFiltering = true;
+            eventListView.ModelFilter = new ModelFilter(x =>
+            {
+                var ev = x as Event;
+                return x != null && (ev.Title.ToLower().Contains(eventSearchTextBox.Text.ToLower()));
+            });
+        }
+
+        private void searchTopics()
+        {
+            topicDataListView.UseFiltering = true;
+            topicDataListView.ModelFilter = new ModelFilter(x =>
+            {
+                var t = x as Topic;
+                return x != null && (t.Title.ToLower().Contains(topicSearchTextBox.Text.ToLower()));
+            });
         }
     }
 }

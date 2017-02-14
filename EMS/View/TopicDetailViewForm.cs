@@ -1,4 +1,5 @@
-﻿using EMS.Model;
+﻿using BrightIdeasSoftware;
+using EMS.Model;
 using EMS.Util;
 using System;
 using System.Collections.Generic;
@@ -104,6 +105,27 @@ namespace EMS.View
             topicLocationLabel.Text = t.Location;
             topicDateTimeLabel.Text = ((DateTime)t.Date).ToShortDateString() + " at " + ((DateTime)t.Date).ToShortTimeString();
             topicDescription.Text = t.Description;
+
+            activityTitleLabel.Text = "Not selected";
+            activityTypeLabel.Text = "Not selected";
+            activityLocationLabel.Text = "Not selected";
+            activityDateTimeLabel.Text = "Not selected";
+            activityDescriptionLabel.Text = "Not selected";
+        }
+
+        private void searchActivityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            searchActivities();
+        }
+
+        private void searchActivities()
+        {
+            activityDataListView.UseFiltering = true;
+            activityDataListView.ModelFilter = new ModelFilter(x =>
+            {
+                var t = x as Activity;
+                return x != null && (t.Title.ToLower().Contains(searchActivityTextBox.Text.ToLower()));
+            });
         }
     }
 }

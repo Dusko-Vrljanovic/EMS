@@ -65,6 +65,7 @@
             this.activityDateTimeLabel = new System.Windows.Forms.Label();
             this.activityDescriptionLabel = new System.Windows.Forms.Label();
             this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.searchActivityTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.layoutPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -131,6 +132,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.searchActivityTextBox);
             this.panel1.Controls.Add(this.deleteActivityButton);
             this.panel1.Controls.Add(this.editActivityButton);
             this.panel1.Controls.Add(this.addActivityButton);
@@ -182,10 +184,10 @@
             this.activityDataListView.DataSource = null;
             this.activityDataListView.FullRowSelect = true;
             this.activityDataListView.GridLines = true;
-            this.activityDataListView.Location = new System.Drawing.Point(4, 31);
+            this.activityDataListView.Location = new System.Drawing.Point(4, 61);
             this.activityDataListView.Name = "activityDataListView";
             this.activityDataListView.ShowGroups = false;
-            this.activityDataListView.Size = new System.Drawing.Size(239, 253);
+            this.activityDataListView.Size = new System.Drawing.Size(239, 223);
             this.activityDataListView.TabIndex = 0;
             this.activityDataListView.UseCompatibleStateImageBehavior = false;
             this.activityDataListView.View = System.Windows.Forms.View.Details;
@@ -203,10 +205,10 @@
             // topicTable
             // 
             this.topicTable.ColumnCount = 4;
-            this.topicTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.50296F));
-            this.topicTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.49704F));
+            this.topicTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.62874F));
+            this.topicTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.37125F));
             this.topicTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.topicTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
+            this.topicTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 245F));
             this.topicTable.Controls.Add(this.label2, 0, 0);
             this.topicTable.Controls.Add(this.label3, 0, 1);
             this.topicTable.Controls.Add(this.label4, 0, 2);
@@ -269,7 +271,7 @@
             this.topicTitleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.topicTitleLabel.Location = new System.Drawing.Point(122, 0);
             this.topicTitleLabel.Name = "topicTitleLabel";
-            this.topicTitleLabel.Size = new System.Drawing.Size(210, 46);
+            this.topicTitleLabel.Size = new System.Drawing.Size(209, 46);
             this.topicTitleLabel.TabIndex = 3;
             this.topicTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -279,7 +281,7 @@
             this.topicTypeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.topicTypeLabel.Location = new System.Drawing.Point(122, 46);
             this.topicTypeLabel.Name = "topicTypeLabel";
-            this.topicTypeLabel.Size = new System.Drawing.Size(210, 46);
+            this.topicTypeLabel.Size = new System.Drawing.Size(209, 46);
             this.topicTypeLabel.TabIndex = 4;
             this.topicTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -289,7 +291,7 @@
             this.topicLocationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.topicLocationLabel.Location = new System.Drawing.Point(122, 92);
             this.topicLocationLabel.Name = "topicLocationLabel";
-            this.topicLocationLabel.Size = new System.Drawing.Size(210, 48);
+            this.topicLocationLabel.Size = new System.Drawing.Size(209, 48);
             this.topicLocationLabel.TabIndex = 5;
             this.topicLocationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -298,7 +300,7 @@
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(338, 0);
+            this.label8.Location = new System.Drawing.Point(337, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 46);
             this.label8.TabIndex = 6;
@@ -310,7 +312,7 @@
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(338, 46);
+            this.label9.Location = new System.Drawing.Point(337, 46);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 46);
             this.label9.TabIndex = 7;
@@ -320,9 +322,9 @@
             // 
             this.topicDateTimeLabel.AutoSize = true;
             this.topicDateTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topicDateTimeLabel.Location = new System.Drawing.Point(433, 0);
+            this.topicDateTimeLabel.Location = new System.Drawing.Point(432, 0);
             this.topicDateTimeLabel.Name = "topicDateTimeLabel";
-            this.topicDateTimeLabel.Size = new System.Drawing.Size(239, 46);
+            this.topicDateTimeLabel.Size = new System.Drawing.Size(240, 46);
             this.topicDateTimeLabel.TabIndex = 9;
             this.topicDateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -330,19 +332,19 @@
             // 
             this.topicDescription.AutoSize = true;
             this.topicDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topicDescription.Location = new System.Drawing.Point(433, 46);
+            this.topicDescription.Location = new System.Drawing.Point(432, 46);
             this.topicDescription.Name = "topicDescription";
             this.topicTable.SetRowSpan(this.topicDescription, 2);
-            this.topicDescription.Size = new System.Drawing.Size(239, 94);
+            this.topicDescription.Size = new System.Drawing.Size(240, 94);
             this.topicDescription.TabIndex = 10;
             // 
             // activityTableLayout
             // 
             this.activityTableLayout.ColumnCount = 4;
-            this.activityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.50296F));
-            this.activityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.49704F));
+            this.activityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.62874F));
+            this.activityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.37125F));
             this.activityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.activityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 243F));
+            this.activityTableLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 244F));
             this.activityTableLayout.Controls.Add(this.label1, 0, 0);
             this.activityTableLayout.Controls.Add(this.activityTitleLabel, 1, 0);
             this.activityTableLayout.Controls.Add(this.label13, 2, 0);
@@ -381,7 +383,7 @@
             this.activityTitleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activityTitleLabel.Location = new System.Drawing.Point(122, 0);
             this.activityTitleLabel.Name = "activityTitleLabel";
-            this.activityTitleLabel.Size = new System.Drawing.Size(210, 48);
+            this.activityTitleLabel.Size = new System.Drawing.Size(209, 48);
             this.activityTitleLabel.TabIndex = 1;
             this.activityTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -390,7 +392,7 @@
             this.label13.AutoSize = true;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(338, 0);
+            this.label13.Location = new System.Drawing.Point(337, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 48);
             this.label13.TabIndex = 2;
@@ -402,7 +404,7 @@
             this.label14.AutoSize = true;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(338, 48);
+            this.label14.Location = new System.Drawing.Point(337, 48);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(90, 44);
             this.label14.TabIndex = 3;
@@ -414,7 +416,7 @@
             this.activityTypeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activityTypeLabel.Location = new System.Drawing.Point(122, 48);
             this.activityTypeLabel.Name = "activityTypeLabel";
-            this.activityTypeLabel.Size = new System.Drawing.Size(210, 44);
+            this.activityTypeLabel.Size = new System.Drawing.Size(209, 44);
             this.activityTypeLabel.TabIndex = 4;
             this.activityTypeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -448,7 +450,7 @@
             this.activityLocationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.activityLocationLabel.Location = new System.Drawing.Point(122, 92);
             this.activityLocationLabel.Name = "activityLocationLabel";
-            this.activityLocationLabel.Size = new System.Drawing.Size(210, 49);
+            this.activityLocationLabel.Size = new System.Drawing.Size(209, 49);
             this.activityLocationLabel.TabIndex = 7;
             this.activityLocationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -456,9 +458,9 @@
             // 
             this.activityDateTimeLabel.AutoSize = true;
             this.activityDateTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.activityDateTimeLabel.Location = new System.Drawing.Point(434, 0);
+            this.activityDateTimeLabel.Location = new System.Drawing.Point(433, 0);
             this.activityDateTimeLabel.Name = "activityDateTimeLabel";
-            this.activityDateTimeLabel.Size = new System.Drawing.Size(238, 48);
+            this.activityDateTimeLabel.Size = new System.Drawing.Size(239, 48);
             this.activityDateTimeLabel.TabIndex = 8;
             this.activityDateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -466,11 +468,19 @@
             // 
             this.activityDescriptionLabel.AutoSize = true;
             this.activityDescriptionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.activityDescriptionLabel.Location = new System.Drawing.Point(434, 48);
+            this.activityDescriptionLabel.Location = new System.Drawing.Point(433, 48);
             this.activityDescriptionLabel.Name = "activityDescriptionLabel";
             this.activityTableLayout.SetRowSpan(this.activityDescriptionLabel, 2);
-            this.activityDescriptionLabel.Size = new System.Drawing.Size(238, 93);
+            this.activityDescriptionLabel.Size = new System.Drawing.Size(239, 93);
             this.activityDescriptionLabel.TabIndex = 9;
+            // 
+            // searchActivityTextBox
+            // 
+            this.searchActivityTextBox.Location = new System.Drawing.Point(4, 34);
+            this.searchActivityTextBox.Name = "searchActivityTextBox";
+            this.searchActivityTextBox.Size = new System.Drawing.Size(239, 21);
+            this.searchActivityTextBox.TabIndex = 4;
+            this.searchActivityTextBox.TextChanged += new System.EventHandler(this.searchActivityTextBox_TextChanged);
             // 
             // TopicDetailViewForm
             // 
@@ -489,6 +499,7 @@
             this.menuStrip1.PerformLayout();
             this.layoutPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.activityDataListView)).EndInit();
             this.topicTable.ResumeLayout(false);
             this.topicTable.PerformLayout();
@@ -537,5 +548,6 @@
         private System.Windows.Forms.Label activityDateTimeLabel;
         private System.Windows.Forms.Label activityDescriptionLabel;
         private System.Windows.Forms.BindingSource activityBindingSource;
+        private System.Windows.Forms.TextBox searchActivityTextBox;
     }
 }
