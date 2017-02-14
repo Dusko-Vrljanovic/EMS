@@ -108,6 +108,7 @@ namespace EMS.View
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("addToolStripMenuItem.Image")));
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addToolStripMenuItem.Text = "Add";
@@ -115,6 +116,7 @@ namespace EMS.View
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripMenuItem.Image")));
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editToolStripMenuItem.Text = "Edit";
@@ -122,6 +124,7 @@ namespace EMS.View
             // 
             // deleteToolStripMenuItem
             // 
+            this.deleteToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem.Image")));
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deleteToolStripMenuItem.Text = "Delete";
@@ -140,6 +143,7 @@ namespace EMS.View
             // 
             // addToolStripMenuItem1
             // 
+            this.addToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("addToolStripMenuItem1.Image")));
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
             this.addToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.addToolStripMenuItem1.Text = "Add";
@@ -147,6 +151,7 @@ namespace EMS.View
             // 
             // editToolStripMenuItem1
             // 
+            this.editToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripMenuItem1.Image")));
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
             this.editToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.editToolStripMenuItem1.Text = "Edit";
@@ -154,6 +159,7 @@ namespace EMS.View
             // 
             // deleteToolStripMenuItem1
             // 
+            this.deleteToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem1.Image")));
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
             this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
@@ -161,6 +167,7 @@ namespace EMS.View
             // 
             // viewToolStripMenuItem
             // 
+            this.viewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewToolStripMenuItem.Image")));
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewToolStripMenuItem.Text = "View";
@@ -235,32 +242,47 @@ namespace EMS.View
             // 
             // deleteEventButton
             // 
+            this.deleteEventButton.FlatAppearance.BorderSize = 0;
+            this.deleteEventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteEventButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteEventButton.Image")));
+            this.deleteEventButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.deleteEventButton.Location = new System.Drawing.Point(168, 4);
             this.deleteEventButton.Name = "deleteEventButton";
             this.deleteEventButton.Size = new System.Drawing.Size(75, 23);
             this.deleteEventButton.TabIndex = 2;
-            this.deleteEventButton.Text = "Delete";
+            this.deleteEventButton.Text = "     Delete";
             this.deleteEventButton.UseVisualStyleBackColor = true;
             this.deleteEventButton.Click += new System.EventHandler(this.deleteEventButton_Click);
             // 
             // editEventButton
             // 
+            this.editEventButton.BackColor = System.Drawing.Color.Transparent;
+            this.editEventButton.FlatAppearance.BorderSize = 0;
+            this.editEventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editEventButton.Image = ((System.Drawing.Image)(resources.GetObject("editEventButton.Image")));
+            this.editEventButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editEventButton.Location = new System.Drawing.Point(86, 4);
             this.editEventButton.Name = "editEventButton";
             this.editEventButton.Size = new System.Drawing.Size(75, 23);
             this.editEventButton.TabIndex = 1;
             this.editEventButton.Text = "Edit";
-            this.editEventButton.UseVisualStyleBackColor = true;
+            this.editEventButton.UseVisualStyleBackColor = false;
             this.editEventButton.Click += new System.EventHandler(this.editEventButton_Click);
             // 
             // addEventButton
             // 
+            this.addEventButton.BackColor = System.Drawing.Color.Transparent;
+            this.addEventButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.addEventButton.FlatAppearance.BorderSize = 0;
+            this.addEventButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEventButton.Image = ((System.Drawing.Image)(resources.GetObject("addEventButton.Image")));
+            this.addEventButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addEventButton.Location = new System.Drawing.Point(4, 4);
             this.addEventButton.Name = "addEventButton";
             this.addEventButton.Size = new System.Drawing.Size(75, 23);
             this.addEventButton.TabIndex = 0;
             this.addEventButton.Text = "Add";
-            this.addEventButton.UseVisualStyleBackColor = true;
+            this.addEventButton.UseVisualStyleBackColor = false;
             this.addEventButton.Click += new System.EventHandler(this.addEventButton_Click);
             // 
             // detailLayoutPanel
@@ -296,6 +318,10 @@ namespace EMS.View
             // 
             // viewTopicButton
             // 
+            this.viewTopicButton.FlatAppearance.BorderSize = 0;
+            this.viewTopicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewTopicButton.Image = ((System.Drawing.Image)(resources.GetObject("viewTopicButton.Image")));
+            this.viewTopicButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.viewTopicButton.Location = new System.Drawing.Point(249, 4);
             this.viewTopicButton.Name = "viewTopicButton";
             this.viewTopicButton.Size = new System.Drawing.Size(75, 23);
@@ -345,16 +371,24 @@ namespace EMS.View
             // 
             // deleteTopicButton
             // 
+            this.deleteTopicButton.FlatAppearance.BorderSize = 0;
+            this.deleteTopicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteTopicButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteTopicButton.Image")));
+            this.deleteTopicButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.deleteTopicButton.Location = new System.Drawing.Point(168, 4);
             this.deleteTopicButton.Name = "deleteTopicButton";
             this.deleteTopicButton.Size = new System.Drawing.Size(75, 23);
             this.deleteTopicButton.TabIndex = 2;
-            this.deleteTopicButton.Text = "Delete";
+            this.deleteTopicButton.Text = "     Delete";
             this.deleteTopicButton.UseVisualStyleBackColor = true;
             this.deleteTopicButton.Click += new System.EventHandler(this.deleteTopicButton_Click);
             // 
             // editTopicButton
             // 
+            this.editTopicButton.FlatAppearance.BorderSize = 0;
+            this.editTopicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editTopicButton.Image = ((System.Drawing.Image)(resources.GetObject("editTopicButton.Image")));
+            this.editTopicButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editTopicButton.Location = new System.Drawing.Point(86, 4);
             this.editTopicButton.Name = "editTopicButton";
             this.editTopicButton.Size = new System.Drawing.Size(75, 23);
@@ -365,6 +399,10 @@ namespace EMS.View
             // 
             // addTopicButton
             // 
+            this.addTopicButton.FlatAppearance.BorderSize = 0;
+            this.addTopicButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addTopicButton.Image = ((System.Drawing.Image)(resources.GetObject("addTopicButton.Image")));
+            this.addTopicButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addTopicButton.Location = new System.Drawing.Point(4, 4);
             this.addTopicButton.Name = "addTopicButton";
             this.addTopicButton.Size = new System.Drawing.Size(75, 23);

@@ -97,6 +97,7 @@
             // 
             // addToolStripMenuItem1
             // 
+            this.addToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("addToolStripMenuItem1.Image")));
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
             this.addToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.addToolStripMenuItem1.Text = "Add";
@@ -104,6 +105,7 @@
             // 
             // editToolStripMenuItem1
             // 
+            this.editToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripMenuItem1.Image")));
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
             this.editToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.editToolStripMenuItem1.Text = "Edit";
@@ -111,6 +113,7 @@
             // 
             // deleteToolStripMenuItem1
             // 
+            this.deleteToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem1.Image")));
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
             this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
@@ -149,16 +152,24 @@
             // 
             // deleteActivityButton
             // 
+            this.deleteActivityButton.FlatAppearance.BorderSize = 0;
+            this.deleteActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteActivityButton.Image")));
+            this.deleteActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.deleteActivityButton.Location = new System.Drawing.Point(168, 4);
             this.deleteActivityButton.Name = "deleteActivityButton";
             this.deleteActivityButton.Size = new System.Drawing.Size(75, 23);
             this.deleteActivityButton.TabIndex = 3;
-            this.deleteActivityButton.Text = "Delete";
+            this.deleteActivityButton.Text = "     Delete";
             this.deleteActivityButton.UseVisualStyleBackColor = true;
             this.deleteActivityButton.Click += new System.EventHandler(this.deleteActivityButton_Click);
             // 
             // editActivityButton
             // 
+            this.editActivityButton.FlatAppearance.BorderSize = 0;
+            this.editActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("editActivityButton.Image")));
+            this.editActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editActivityButton.Location = new System.Drawing.Point(86, 4);
             this.editActivityButton.Name = "editActivityButton";
             this.editActivityButton.Size = new System.Drawing.Size(75, 23);
@@ -169,6 +180,10 @@
             // 
             // addActivityButton
             // 
+            this.addActivityButton.FlatAppearance.BorderSize = 0;
+            this.addActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("addActivityButton.Image")));
+            this.addActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addActivityButton.Location = new System.Drawing.Point(4, 4);
             this.addActivityButton.Name = "addActivityButton";
             this.addActivityButton.Size = new System.Drawing.Size(75, 23);
@@ -184,6 +199,7 @@
             this.activityDataListView.CellEditUseWholeCell = false;
             this.activityDataListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.topicTitle});
+            this.activityDataListView.Cursor = System.Windows.Forms.Cursors.Default;
             this.activityDataListView.DataSource = null;
             this.activityDataListView.FullRowSelect = true;
             this.activityDataListView.GridLines = true;

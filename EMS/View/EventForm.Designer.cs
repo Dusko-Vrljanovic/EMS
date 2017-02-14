@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventForm));
             this.eventTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.typeLabel = new System.Windows.Forms.Label();
             this.titleErrorLabel = new System.Windows.Forms.Label();
@@ -276,6 +277,7 @@
             this.ClientSize = new System.Drawing.Size(637, 450);
             this.Controls.Add(this.eventTableLayout);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EventForm";
             this.Text = "EventForm";
             this.Load += new System.EventHandler(this.EventForm_Load);
