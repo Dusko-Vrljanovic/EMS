@@ -28,6 +28,7 @@ namespace EMS.View
             activityBindingSource.DataSource = t.Activities.Where(a => a.Active == true).ToList();
             activityDataListView.DataSource = activityBindingSource;
             activityButtonsEnabled(false);
+            topicTable.BorderStyle = BorderStyle.Fixed3D;
         }
 
         private void addActivityButton_Click(object sender, EventArgs e)

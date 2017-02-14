@@ -34,7 +34,7 @@ namespace EMS.View
             eventListView.DataSource = eventBindingSource;
             eventButtonEnabled(false);
 
-            detailLayoutPanel.RowStyles[0].Height = 142;
+            detailLayoutPanel.RowStyles[0].Height = 90;
             detailLayoutPanel.RowStyles[1].Height = 0;
 
             topicBindingSource.DataSource = new List<Topic>(1);
@@ -84,14 +84,14 @@ namespace EMS.View
             {
                 eventButtonEnabled(false);
                 disableTopicButtons();
-                detailLayoutPanel.RowStyles[0].Height = 142;
+                detailLayoutPanel.RowStyles[0].Height = 90;
                 detailLayoutPanel.RowStyles[1].Height = 0;
             }
             else
             {
                 eventButtonEnabled(true);
                 topicButtonEnabled(false);
-                detailLayoutPanel.RowStyles[1].Height = 142;
+                detailLayoutPanel.RowStyles[1].Height = 90;
                 detailLayoutPanel.RowStyles[0].Height = 0;
                 Event ev = (Event)eventListView.SelectedObject;
                 titleLabel.Text = ev.Title;

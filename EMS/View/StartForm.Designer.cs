@@ -296,9 +296,9 @@ namespace EMS.View
             this.detailLayoutPanel.Location = new System.Drawing.Point(253, 3);
             this.detailLayoutPanel.Name = "detailLayoutPanel";
             this.detailLayoutPanel.RowCount = 3;
-            this.detailLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 142F));
             this.detailLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 0F));
-            this.detailLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200F));
+            this.detailLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.detailLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 252F));
             this.detailLayoutPanel.Size = new System.Drawing.Size(841, 433);
             this.detailLayoutPanel.TabIndex = 1;
             // 
@@ -311,9 +311,9 @@ namespace EMS.View
             this.topicPanel.Controls.Add(this.editTopicButton);
             this.topicPanel.Controls.Add(this.addTopicButton);
             this.topicPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.topicPanel.Location = new System.Drawing.Point(3, 145);
+            this.topicPanel.Location = new System.Drawing.Point(3, 93);
             this.topicPanel.Name = "topicPanel";
-            this.topicPanel.Size = new System.Drawing.Size(835, 285);
+            this.topicPanel.Size = new System.Drawing.Size(835, 337);
             this.topicPanel.TabIndex = 0;
             // 
             // viewTopicButton
@@ -355,7 +355,7 @@ namespace EMS.View
             this.topicDataListView.Location = new System.Drawing.Point(4, 34);
             this.topicDataListView.Name = "topicDataListView";
             this.topicDataListView.ShowGroups = false;
-            this.topicDataListView.Size = new System.Drawing.Size(831, 245);
+            this.topicDataListView.Size = new System.Drawing.Size(831, 297);
             this.topicDataListView.TabIndex = 3;
             this.topicDataListView.UseCompatibleStateImageBehavior = false;
             this.topicDataListView.View = System.Windows.Forms.View.Details;
@@ -417,7 +417,7 @@ namespace EMS.View
             this.welcomeLabel.Font = new System.Drawing.Font("Open Sans", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeLabel.Location = new System.Drawing.Point(3, 0);
             this.welcomeLabel.Name = "welcomeLabel";
-            this.welcomeLabel.Size = new System.Drawing.Size(835, 142);
+            this.welcomeLabel.Size = new System.Drawing.Size(835, 1);
             this.welcomeLabel.TabIndex = 1;
             this.welcomeLabel.Text = "Welcome to Event Managment System";
             this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -425,10 +425,10 @@ namespace EMS.View
             // detailViewTable
             // 
             this.detailViewTable.ColumnCount = 4;
-            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.3796F));
-            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.6204F));
-            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 389F));
+            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.08023F));
+            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.91977F));
+            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 114F));
+            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 371F));
             this.detailViewTable.Controls.Add(this.label1, 0, 0);
             this.detailViewTable.Controls.Add(this.label2, 0, 1);
             this.detailViewTable.Controls.Add(this.label3, 0, 2);
@@ -440,13 +440,13 @@ namespace EMS.View
             this.detailViewTable.Controls.Add(this.dateTimeLabel, 3, 0);
             this.detailViewTable.Controls.Add(this.descriptionLabel, 3, 1);
             this.detailViewTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.detailViewTable.Location = new System.Drawing.Point(3, 145);
+            this.detailViewTable.Location = new System.Drawing.Point(3, 3);
             this.detailViewTable.Name = "detailViewTable";
             this.detailViewTable.RowCount = 3;
             this.detailViewTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.detailViewTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.detailViewTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.detailViewTable.Size = new System.Drawing.Size(835, 1);
+            this.detailViewTable.Size = new System.Drawing.Size(835, 84);
             this.detailViewTable.TabIndex = 2;
             // 
             // label1
@@ -454,11 +454,13 @@ namespace EMS.View
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 1);
+            this.label1.Size = new System.Drawing.Size(92, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Title :";
+            this.label1.Text = "     Title :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -466,11 +468,13 @@ namespace EMS.View
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, -17);
+            this.label2.Image = ((System.Drawing.Image)(resources.GetObject("label2.Image")));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(3, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 1);
+            this.label2.Size = new System.Drawing.Size(92, 24);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Type :";
+            this.label2.Text = "     Type :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
@@ -478,20 +482,22 @@ namespace EMS.View
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, -34);
+            this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Location = new System.Drawing.Point(3, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 36);
+            this.label3.Size = new System.Drawing.Size(92, 36);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Location :";
+            this.label3.Text = "     Location :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleLabel.Location = new System.Drawing.Point(81, 0);
+            this.titleLabel.Location = new System.Drawing.Point(101, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(265, 1);
+            this.titleLabel.Size = new System.Drawing.Size(245, 24);
             this.titleLabel.TabIndex = 3;
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -499,9 +505,9 @@ namespace EMS.View
             // 
             this.typeLabel.AutoSize = true;
             this.typeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.typeLabel.Location = new System.Drawing.Point(81, -17);
+            this.typeLabel.Location = new System.Drawing.Point(101, 24);
             this.typeLabel.Name = "typeLabel";
-            this.typeLabel.Size = new System.Drawing.Size(265, 1);
+            this.typeLabel.Size = new System.Drawing.Size(245, 24);
             this.typeLabel.TabIndex = 4;
             this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -509,9 +515,9 @@ namespace EMS.View
             // 
             this.locationLabel.AutoSize = true;
             this.locationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.locationLabel.Location = new System.Drawing.Point(81, -34);
+            this.locationLabel.Location = new System.Drawing.Point(101, 48);
             this.locationLabel.Name = "locationLabel";
-            this.locationLabel.Size = new System.Drawing.Size(265, 36);
+            this.locationLabel.Size = new System.Drawing.Size(245, 36);
             this.locationLabel.TabIndex = 5;
             this.locationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -520,11 +526,13 @@ namespace EMS.View
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label7.Location = new System.Drawing.Point(352, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 1);
+            this.label7.Size = new System.Drawing.Size(108, 24);
             this.label7.TabIndex = 6;
-            this.label7.Text = "Date/Time :";
+            this.label7.Text = "     Date/Time :";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
@@ -532,19 +540,22 @@ namespace EMS.View
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(352, -17);
+            this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label8.Location = new System.Drawing.Point(352, 24);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 1);
+            this.label8.Size = new System.Drawing.Size(108, 24);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Description :";
+            this.label8.Text = "     Description :";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dateTimeLabel
             // 
             this.dateTimeLabel.AutoSize = true;
             this.dateTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimeLabel.Location = new System.Drawing.Point(448, 0);
+            this.dateTimeLabel.Location = new System.Drawing.Point(466, 0);
             this.dateTimeLabel.Name = "dateTimeLabel";
-            this.dateTimeLabel.Size = new System.Drawing.Size(384, 1);
+            this.dateTimeLabel.Size = new System.Drawing.Size(366, 24);
             this.dateTimeLabel.TabIndex = 8;
             this.dateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -552,10 +563,10 @@ namespace EMS.View
             // 
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.descriptionLabel.Location = new System.Drawing.Point(448, -17);
+            this.descriptionLabel.Location = new System.Drawing.Point(466, 24);
             this.descriptionLabel.Name = "descriptionLabel";
             this.detailViewTable.SetRowSpan(this.descriptionLabel, 2);
-            this.descriptionLabel.Size = new System.Drawing.Size(384, 19);
+            this.descriptionLabel.Size = new System.Drawing.Size(366, 60);
             this.descriptionLabel.TabIndex = 9;
             // 
             // StartForm
