@@ -207,5 +207,82 @@ namespace EMS.View
                 return x != null && (t.Title.ToLower().Contains(topicSearchTextBox.Text.ToLower()));
             });
         }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addEventButton.PerformClick();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (eventListView.SelectedIndex != -1)
+            {
+                editEventButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select event.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (eventListView.SelectedIndex != -1)
+            {
+                deleteEventButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select event.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void addToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (eventListView.SelectedIndex != -1)
+            {
+                addTopicButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select event.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (topicDataListView.SelectedIndex != -1)
+            {
+                editTopicButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select topic.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (topicDataListView.SelectedIndex != -1)
+            {
+                deleteTopicButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select topic.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (topicDataListView.SelectedIndex != -1)
+            {
+                deleteTopicButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select topic.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

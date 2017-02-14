@@ -127,5 +127,34 @@ namespace EMS.View
                 return x != null && (t.Title.ToLower().Contains(searchActivityTextBox.Text.ToLower()));
             });
         }
+
+        private void addToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            addActivityButton.PerformClick();
+        }
+
+        private void editToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if(activityDataListView.SelectedIndex != -1)
+            {
+                editActivityButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select activity.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void deleteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (activityDataListView.SelectedIndex != -1)
+            {
+                deleteActivityButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select activity.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
