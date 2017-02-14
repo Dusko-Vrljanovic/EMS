@@ -15,18 +15,33 @@ namespace EMS.View
 {
     public partial class ActivityForm : Form
     {
-        private ActivityManager aM;
+        private ActivityManager tM;
+        private Activity t;
+        private Topic e;
 
-        public ActivityForm(ActivityManager a)
+        public ActivityForm(ActivityManager t, Topic e)
         {
             InitializeComponent();
-            aM = a;
-            typeComboBox.DataSource = aM.getActivityTypes();
+            tM = t;
+            this.e = e;
+            typeComboBox.DataSource = tM.getActivityTypes();
+            Text = "Add new activity";
+        }
+        public ActivityForm(ActivityManager tM, Activity t, Topic ev) : this(tM, ev)
+        {
+            this.t = t;
+            Text = "Edit activity";
+            titleTextBox.Text = t.Title;
+            typeComboBox.DataSource = tM.getActivityTypes();
+            typeComboBox.SelectedItem = t.ActivityType;
+            locationTextBox.Text = t.Location;
+            activityDateTimePicker.Value = (DateTime)t.Date;
+            descriptionTextBox.Text = t.Description;
         }
 
         private void ActivityForm_Load(object sender, EventArgs e)
         {
-            hideErrors(); 
+            hideErrors();
         }
 
         private void hideErrors()
@@ -40,12 +55,12 @@ namespace EMS.View
         {
             hideErrors();
             bool hasErrors = false;
-            if(titleTextBox.Text == "")
+            if (titleTextBox.Text == "")
             {
                 activityTableLayout.RowStyles[1].Height = 30;
                 hasErrors = true;
             }
-            if(typeComboBox.SelectedIndex == -1)
+            if (typeComboBox.SelectedIndex == -1)
             {
                 activityTableLayout.RowStyles[3].Height = 30;
                 hasErrors = true;
@@ -62,16 +77,29 @@ namespace EMS.View
         {
             if (!checkForErrors())
             {
-                Activity a = new Activity();
-                a.Title = titleTextBox.Text;
-                a.TypeID = ((ActivityType)typeComboBox.SelectedItem).ID;
-                a.Location = locationTextBox.Text;
-                a.Date = activityDateTimePicker.Value;
-                a.Description = descriptionTextBox.Text;
-                new Thread(() =>
+                if (Text == "Add new activity")
                 {
-                    aM.addActivity(a);
-                }).Start();
+                    Activity t = new Activity();
+                    t.Title = titleTextBox.Text;
+                    t.TypeID = ((ActivityType)typeComboBox.SelectedItem).ID;
+                    t.Location = locationTextBox.Text;
+                    t.Date = activityDateTimePicker.Value;
+                    t.Description = descriptionTextBox.Text;
+                    t.Active = true;
+                    t.Topic = this.e;
+                    t.TopicID = this.e.ID;
+                    tM.addActivity(t);
+                }
+                else
+                {
+                    t.Title = titleTextBox.Text;
+                    t.TypeID = ((ActivityType)typeComboBox.SelectedItem).ID;
+                    t.Location = locationTextBox.Text;
+                    t.Date = activityDateTimePicker.Value;
+                    t.Description = descriptionTextBox.Text;
+                    t.Active = true;
+                    tM.updateActivity(t);
+                }
                 DialogResult = DialogResult.OK;
                 this.Close();
             }

@@ -98,7 +98,7 @@ namespace EMS.View
                 locationLabel.Text = ev.Location;
                 dateTimeLabel.Text = ((DateTime)ev.Date).ToShortDateString() + " at " + ((DateTime)ev.Date).ToShortTimeString();
                 descriptionLabel.Text = ev.Description;
-                topicBindingSource.DataSource = ev.Topics.Where(t => t.Active == true);
+                topicBindingSource.DataSource = ev.Topics.Where(t => t.Active == true).ToList();
             }
 
         }
@@ -116,7 +116,7 @@ namespace EMS.View
         private void topicButtonEnabled(bool enabled)
         {
             addTopicButton.Enabled = true;
-            editTopicButton.Enabled = deleteTopicButton.Enabled = enabled;
+            editTopicButton.Enabled = deleteTopicButton.Enabled = viewTopicButton.Enabled = enabled;
         }
 
         private void addTopicButton_Click(object sender, EventArgs e)
@@ -176,6 +176,14 @@ namespace EMS.View
 
         private void topicSearchTextBox_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void viewTopicButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new TopicDetailViewForm(this, (Topic)topicDataListView.SelectedObject, aM).ShowDialog();
+            this.Show();
 
         }
     }
