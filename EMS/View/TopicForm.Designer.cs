@@ -92,7 +92,7 @@
             // 
             this.typeLabel.Location = new System.Drawing.Point(3, 60);
             this.typeLabel.Name = "typeLabel";
-            this.typeLabel.Size = new System.Drawing.Size(83, 30);
+            this.typeLabel.Size = new System.Drawing.Size(83, 26);
             this.typeLabel.TabIndex = 3;
             this.typeLabel.Text = "Type :";
             this.typeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -125,7 +125,7 @@
             // 
             this.locationLabel.Location = new System.Drawing.Point(3, 120);
             this.locationLabel.Name = "locationLabel";
-            this.locationLabel.Size = new System.Drawing.Size(83, 30);
+            this.locationLabel.Size = new System.Drawing.Size(83, 24);
             this.locationLabel.TabIndex = 5;
             this.locationLabel.Text = "Location :";
             this.locationLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,7 +146,7 @@
             // 
             this.titleLabel.Location = new System.Drawing.Point(3, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(83, 30);
+            this.titleLabel.Size = new System.Drawing.Size(83, 24);
             this.titleLabel.TabIndex = 1;
             this.titleLabel.Text = "Title :";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,7 +170,7 @@
             // 
             this.dateTimeLabel.Location = new System.Drawing.Point(3, 180);
             this.dateTimeLabel.Name = "dateTimeLabel";
-            this.dateTimeLabel.Size = new System.Drawing.Size(83, 30);
+            this.dateTimeLabel.Size = new System.Drawing.Size(83, 24);
             this.dateTimeLabel.TabIndex = 7;
             this.dateTimeLabel.Text = "Date/Time :";
             this.dateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -222,6 +222,10 @@
             // saveButton
             // 
             this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
+            this.saveButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.saveButton.Location = new System.Drawing.Point(448, 17);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(75, 23);
@@ -233,11 +237,15 @@
             // cancelButton
             // 
             this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.cancelButton.FlatAppearance.BorderSize = 0;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelButton.Image")));
+            this.cancelButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.cancelButton.Location = new System.Drawing.Point(529, 17);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 6;
-            this.cancelButton.Text = "Cancel";
+            this.cancelButton.Text = "    Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
