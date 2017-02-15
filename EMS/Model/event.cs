@@ -31,5 +31,10 @@ namespace EMS.Model
         public virtual EventType EventType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Topic> Topics { get; set; }
+
+        public string OurDate()
+        {
+            return ((DateTime)Date).ToShortDateString() + " " + ((DateTime)Date).ToShortTimeString();
+        }
     }
 }
