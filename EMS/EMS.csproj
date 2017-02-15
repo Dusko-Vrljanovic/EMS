@@ -125,12 +125,6 @@
     <Compile Include="View\StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TopicDetailViewForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\TopicDetailViewForm.Designer.cs">
-      <DependentUpon>TopicDetailViewForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\TransparentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,9 +154,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\TopicDetailViewForm.resx">
-      <DependentUpon>TopicDetailViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\TransparentForm.resx">
       <DependentUpon>TransparentForm.cs</DependentUpon>

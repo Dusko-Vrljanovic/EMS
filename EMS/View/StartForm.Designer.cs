@@ -50,11 +50,15 @@ namespace EMS.View
             this.eventSearchTextBox = new System.Windows.Forms.TextBox();
             this.eventListView = new BrightIdeasSoftware.DataListView();
             this.Title = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.eventLocation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.eventStart = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.eventEnd = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.deleteEventButton = new System.Windows.Forms.Button();
             this.editEventButton = new System.Windows.Forms.Button();
             this.addEventButton = new System.Windows.Forms.Button();
             this.detailLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.topicPanel = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.topicSearchComboBox = new System.Windows.Forms.ComboBox();
             this.viewTopicButton = new System.Windows.Forms.Button();
@@ -79,28 +83,29 @@ namespace EMS.View
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimeLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
-            this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.topicBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label5 = new System.Windows.Forms.Label();
-            this.eventLocation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.eventStart = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.eventEnd = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addActivityButton = new System.Windows.Forms.Button();
-            this.editActivityButton = new System.Windows.Forms.Button();
-            this.deleteActivityButton = new System.Windows.Forms.Button();
-            this.viewActivityButton = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.searchActivityComboBox = new System.Windows.Forms.ComboBox();
-            this.activitySearchTextBox = new System.Windows.Forms.TextBox();
-            this.activityDataListView = new BrightIdeasSoftware.DataListView();
+            this.topicLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.activityDataListView = new BrightIdeasSoftware.DataListView();
             this.activityTitle = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.activityLocation = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.activityStart = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.activityEnd = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.topicLabel = new System.Windows.Forms.Label();
+            this.activitySearchTextBox = new System.Windows.Forms.TextBox();
+            this.activitySearchComboBox = new System.Windows.Forms.ComboBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.viewActivityButton = new System.Windows.Forms.Button();
+            this.deleteActivityButton = new System.Windows.Forms.Button();
+            this.editActivityButton = new System.Windows.Forms.Button();
+            this.addActivityButton = new System.Windows.Forms.Button();
+            this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.topicBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.activityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.startTableLayout.SuspendLayout();
             this.eventPanel.SuspendLayout();
@@ -111,11 +116,11 @@ namespace EMS.View
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topicDataListView)).BeginInit();
             this.detailViewTable.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.activityDataListView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.topicBindingSource)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activityDataListView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,7 +128,8 @@ namespace EMS.View
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.eventToolStripMenuItem,
-            this.topicToolStripMenuItem});
+            this.topicToolStripMenuItem,
+            this.activityToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(1097, 24);
@@ -179,7 +185,7 @@ namespace EMS.View
             // 
             this.addToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("addToolStripMenuItem1.Image")));
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.addToolStripMenuItem1.Text = "Add";
             this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
             // 
@@ -187,7 +193,7 @@ namespace EMS.View
             // 
             this.editToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripMenuItem1.Image")));
             this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
-            this.editToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.editToolStripMenuItem1.Text = "Edit";
             this.editToolStripMenuItem1.Click += new System.EventHandler(this.editToolStripMenuItem1_Click);
             // 
@@ -195,7 +201,7 @@ namespace EMS.View
             // 
             this.deleteToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem1.Image")));
             this.deleteToolStripMenuItem1.Name = "deleteToolStripMenuItem1";
-            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(107, 22);
+            this.deleteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.deleteToolStripMenuItem1.Text = "Delete";
             this.deleteToolStripMenuItem1.Click += new System.EventHandler(this.deleteToolStripMenuItem1_Click);
             // 
@@ -203,7 +209,7 @@ namespace EMS.View
             // 
             this.viewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("viewToolStripMenuItem.Image")));
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
@@ -264,6 +270,7 @@ namespace EMS.View
             this.eventSearchComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.eventSearchComboBox.FormattingEnabled = true;
             this.eventSearchComboBox.Items.AddRange(new object[] {
+            "All",
             "Search by title",
             "Search by type",
             "Search by location",
@@ -320,6 +327,27 @@ namespace EMS.View
             this.Title.Tag = "2";
             this.Title.Text = "Title";
             this.Title.Width = 115;
+            // 
+            // eventLocation
+            // 
+            this.eventLocation.AspectName = "Location";
+            this.eventLocation.Tag = "2";
+            this.eventLocation.Text = "Location";
+            this.eventLocation.Width = 109;
+            // 
+            // eventStart
+            // 
+            this.eventStart.AspectName = "OurDate";
+            this.eventStart.Tag = "2";
+            this.eventStart.Text = "Start time";
+            this.eventStart.Width = 130;
+            // 
+            // eventEnd
+            // 
+            this.eventEnd.AspectName = "OurDate";
+            this.eventEnd.Tag = "2";
+            this.eventEnd.Text = "End time";
+            this.eventEnd.Width = 140;
             // 
             // deleteEventButton
             // 
@@ -402,6 +430,17 @@ namespace EMS.View
             this.topicPanel.Size = new System.Drawing.Size(576, 197);
             this.topicPanel.TabIndex = 0;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label5.Location = new System.Drawing.Point(4, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(104, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "        List of topics :";
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
@@ -417,6 +456,7 @@ namespace EMS.View
             this.topicSearchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.topicSearchComboBox.FormattingEnabled = true;
             this.topicSearchComboBox.Items.AddRange(new object[] {
+            "All",
             "Search by title",
             "Search by type",
             "Search by location"});
@@ -569,7 +609,7 @@ namespace EMS.View
             this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.24896F));
             this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.75104F));
             this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 118F));
-            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.detailViewTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 217F));
             this.detailViewTable.Controls.Add(this.label1, 0, 0);
             this.detailViewTable.Controls.Add(this.label2, 0, 1);
             this.detailViewTable.Controls.Add(this.label3, 0, 2);
@@ -599,7 +639,7 @@ namespace EMS.View
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 24);
+            this.label1.Size = new System.Drawing.Size(90, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "     Title :";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -613,7 +653,7 @@ namespace EMS.View
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Location = new System.Drawing.Point(3, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 24);
+            this.label2.Size = new System.Drawing.Size(90, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "     Type :";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -627,7 +667,7 @@ namespace EMS.View
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label3.Location = new System.Drawing.Point(3, 48);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 36);
+            this.label3.Size = new System.Drawing.Size(90, 36);
             this.label3.TabIndex = 2;
             this.label3.Text = "     Location :";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -636,7 +676,7 @@ namespace EMS.View
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.titleLabel.Location = new System.Drawing.Point(100, 0);
+            this.titleLabel.Location = new System.Drawing.Point(99, 0);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(138, 24);
             this.titleLabel.TabIndex = 3;
@@ -646,7 +686,7 @@ namespace EMS.View
             // 
             this.typeLabel.AutoSize = true;
             this.typeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.typeLabel.Location = new System.Drawing.Point(100, 24);
+            this.typeLabel.Location = new System.Drawing.Point(99, 24);
             this.typeLabel.Name = "typeLabel";
             this.typeLabel.Size = new System.Drawing.Size(138, 24);
             this.typeLabel.TabIndex = 4;
@@ -656,7 +696,7 @@ namespace EMS.View
             // 
             this.locationLabel.AutoSize = true;
             this.locationLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.locationLabel.Location = new System.Drawing.Point(100, 48);
+            this.locationLabel.Location = new System.Drawing.Point(99, 48);
             this.locationLabel.Name = "locationLabel";
             this.locationLabel.Size = new System.Drawing.Size(138, 36);
             this.locationLabel.TabIndex = 5;
@@ -669,7 +709,7 @@ namespace EMS.View
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Image = ((System.Drawing.Image)(resources.GetObject("label7.Image")));
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(244, 0);
+            this.label7.Location = new System.Drawing.Point(243, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 24);
             this.label7.TabIndex = 6;
@@ -683,7 +723,7 @@ namespace EMS.View
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Image = ((System.Drawing.Image)(resources.GetObject("label8.Image")));
             this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label8.Location = new System.Drawing.Point(244, 24);
+            this.label8.Location = new System.Drawing.Point(243, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(112, 24);
             this.label8.TabIndex = 7;
@@ -694,9 +734,9 @@ namespace EMS.View
             // 
             this.dateTimeLabel.AutoSize = true;
             this.dateTimeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimeLabel.Location = new System.Drawing.Point(362, 0);
+            this.dateTimeLabel.Location = new System.Drawing.Point(361, 0);
             this.dateTimeLabel.Name = "dateTimeLabel";
-            this.dateTimeLabel.Size = new System.Drawing.Size(211, 24);
+            this.dateTimeLabel.Size = new System.Drawing.Size(212, 24);
             this.dateTimeLabel.TabIndex = 8;
             this.dateTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -704,43 +744,11 @@ namespace EMS.View
             // 
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.descriptionLabel.Location = new System.Drawing.Point(362, 24);
+            this.descriptionLabel.Location = new System.Drawing.Point(361, 24);
             this.descriptionLabel.Name = "descriptionLabel";
             this.detailViewTable.SetRowSpan(this.descriptionLabel, 2);
-            this.descriptionLabel.Size = new System.Drawing.Size(211, 60);
+            this.descriptionLabel.Size = new System.Drawing.Size(212, 60);
             this.descriptionLabel.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(4, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "        List of topics :";
-            // 
-            // eventLocation
-            // 
-            this.eventLocation.AspectName = "Location";
-            this.eventLocation.Tag = "2";
-            this.eventLocation.Text = "Location";
-            this.eventLocation.Width = 109;
-            // 
-            // eventStart
-            // 
-            this.eventStart.AspectName = "OurDate";
-            this.eventStart.Tag = "2";
-            this.eventStart.Text = "Start time";
-            this.eventStart.Width = 130;
-            // 
-            // eventEnd
-            // 
-            this.eventEnd.AspectName = "OurDate";
-            this.eventEnd.Tag = "2";
-            this.eventEnd.Text = "End time";
-            this.eventEnd.Width = 140;
             // 
             // panel1
             // 
@@ -748,7 +756,7 @@ namespace EMS.View
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.activityDataListView);
             this.panel1.Controls.Add(this.activitySearchTextBox);
-            this.panel1.Controls.Add(this.searchActivityComboBox);
+            this.panel1.Controls.Add(this.activitySearchComboBox);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.viewActivityButton);
             this.panel1.Controls.Add(this.deleteActivityButton);
@@ -760,89 +768,24 @@ namespace EMS.View
             this.panel1.Size = new System.Drawing.Size(576, 134);
             this.panel1.TabIndex = 3;
             // 
-            // addActivityButton
+            // topicLabel
             // 
-            this.addActivityButton.FlatAppearance.BorderSize = 0;
-            this.addActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("addActivityButton.Image")));
-            this.addActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addActivityButton.Location = new System.Drawing.Point(4, 3);
-            this.addActivityButton.Name = "addActivityButton";
-            this.addActivityButton.Size = new System.Drawing.Size(75, 23);
-            this.addActivityButton.TabIndex = 0;
-            this.addActivityButton.Text = "Add";
-            this.addActivityButton.UseVisualStyleBackColor = true;
+            this.topicLabel.AutoSize = true;
+            this.topicLabel.Location = new System.Drawing.Point(165, 29);
+            this.topicLabel.Name = "topicLabel";
+            this.topicLabel.Size = new System.Drawing.Size(0, 15);
+            this.topicLabel.TabIndex = 9;
             // 
-            // editActivityButton
+            // label6
             // 
-            this.editActivityButton.FlatAppearance.BorderSize = 0;
-            this.editActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("editActivityButton.Image")));
-            this.editActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editActivityButton.Location = new System.Drawing.Point(86, 3);
-            this.editActivityButton.Name = "editActivityButton";
-            this.editActivityButton.Size = new System.Drawing.Size(75, 23);
-            this.editActivityButton.TabIndex = 1;
-            this.editActivityButton.Text = "Edit";
-            this.editActivityButton.UseVisualStyleBackColor = true;
-            // 
-            // deleteActivityButton
-            // 
-            this.deleteActivityButton.FlatAppearance.BorderSize = 0;
-            this.deleteActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteActivityButton.Image")));
-            this.deleteActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteActivityButton.Location = new System.Drawing.Point(168, 3);
-            this.deleteActivityButton.Name = "deleteActivityButton";
-            this.deleteActivityButton.Size = new System.Drawing.Size(75, 23);
-            this.deleteActivityButton.TabIndex = 2;
-            this.deleteActivityButton.Text = "     Delete";
-            this.deleteActivityButton.UseVisualStyleBackColor = true;
-            // 
-            // viewActivityButton
-            // 
-            this.viewActivityButton.FlatAppearance.BorderSize = 0;
-            this.viewActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.viewActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("viewActivityButton.Image")));
-            this.viewActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.viewActivityButton.Location = new System.Drawing.Point(249, 3);
-            this.viewActivityButton.Name = "viewActivityButton";
-            this.viewActivityButton.Size = new System.Drawing.Size(75, 23);
-            this.viewActivityButton.TabIndex = 3;
-            this.viewActivityButton.Text = "View";
-            this.viewActivityButton.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(321, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(27, 23);
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
-            // searchActivityComboBox
-            // 
-            this.searchActivityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.searchActivityComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.searchActivityComboBox.FormattingEnabled = true;
-            this.searchActivityComboBox.Items.AddRange(new object[] {
-            "Search by title",
-            "Search by type",
-            "Search by location"});
-            this.searchActivityComboBox.Location = new System.Drawing.Point(349, 3);
-            this.searchActivityComboBox.Name = "searchActivityComboBox";
-            this.searchActivityComboBox.Size = new System.Drawing.Size(117, 23);
-            this.searchActivityComboBox.TabIndex = 5;
-            // 
-            // activitySearchTextBox
-            // 
-            this.activitySearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.activitySearchTextBox.Location = new System.Drawing.Point(472, 4);
-            this.activitySearchTextBox.Name = "activitySearchTextBox";
-            this.activitySearchTextBox.Size = new System.Drawing.Size(100, 21);
-            this.activitySearchTextBox.TabIndex = 6;
+            this.label6.AutoSize = true;
+            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
+            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Location = new System.Drawing.Point(4, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(161, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "        List of activities for topic ";
             // 
             // activityDataListView
             // 
@@ -874,17 +817,6 @@ namespace EMS.View
             this.activityDataListView.SelectedIndexChanged += new System.EventHandler(this.activityDataListView_SelectedIndexChanged);
             this.activityDataListView.SizeChanged += new System.EventHandler(this.activityDataListView_SizeChanged);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(4, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(161, 15);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "        List of activities for topic ";
-            // 
             // activityTitle
             // 
             this.activityTitle.AspectName = "Title";
@@ -913,13 +845,138 @@ namespace EMS.View
             this.activityEnd.Text = "End time";
             this.activityEnd.Width = 111;
             // 
-            // topicLabel
+            // activitySearchTextBox
             // 
-            this.topicLabel.AutoSize = true;
-            this.topicLabel.Location = new System.Drawing.Point(165, 29);
-            this.topicLabel.Name = "topicLabel";
-            this.topicLabel.Size = new System.Drawing.Size(0, 15);
-            this.topicLabel.TabIndex = 9;
+            this.activitySearchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.activitySearchTextBox.Location = new System.Drawing.Point(472, 4);
+            this.activitySearchTextBox.Name = "activitySearchTextBox";
+            this.activitySearchTextBox.Size = new System.Drawing.Size(100, 21);
+            this.activitySearchTextBox.TabIndex = 6;
+            this.activitySearchTextBox.TextChanged += new System.EventHandler(this.searchActivityTextBox_TextChanged);
+            // 
+            // activitySearchComboBox
+            // 
+            this.activitySearchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.activitySearchComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.activitySearchComboBox.FormattingEnabled = true;
+            this.activitySearchComboBox.Items.AddRange(new object[] {
+            "All",
+            "Search by title",
+            "Search by type",
+            "Search by location"});
+            this.activitySearchComboBox.Location = new System.Drawing.Point(349, 3);
+            this.activitySearchComboBox.Name = "activitySearchComboBox";
+            this.activitySearchComboBox.Size = new System.Drawing.Size(117, 23);
+            this.activitySearchComboBox.TabIndex = 5;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(321, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(27, 23);
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            // 
+            // viewActivityButton
+            // 
+            this.viewActivityButton.FlatAppearance.BorderSize = 0;
+            this.viewActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.viewActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("viewActivityButton.Image")));
+            this.viewActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.viewActivityButton.Location = new System.Drawing.Point(249, 3);
+            this.viewActivityButton.Name = "viewActivityButton";
+            this.viewActivityButton.Size = new System.Drawing.Size(75, 23);
+            this.viewActivityButton.TabIndex = 3;
+            this.viewActivityButton.Text = "View";
+            this.viewActivityButton.UseVisualStyleBackColor = true;
+            this.viewActivityButton.Click += new System.EventHandler(this.viewActivityButton_Click);
+            // 
+            // deleteActivityButton
+            // 
+            this.deleteActivityButton.FlatAppearance.BorderSize = 0;
+            this.deleteActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteActivityButton.Image")));
+            this.deleteActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deleteActivityButton.Location = new System.Drawing.Point(168, 3);
+            this.deleteActivityButton.Name = "deleteActivityButton";
+            this.deleteActivityButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteActivityButton.TabIndex = 2;
+            this.deleteActivityButton.Text = "     Delete";
+            this.deleteActivityButton.UseVisualStyleBackColor = true;
+            this.deleteActivityButton.Click += new System.EventHandler(this.deleteActivityButton_Click);
+            // 
+            // editActivityButton
+            // 
+            this.editActivityButton.FlatAppearance.BorderSize = 0;
+            this.editActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("editActivityButton.Image")));
+            this.editActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editActivityButton.Location = new System.Drawing.Point(86, 3);
+            this.editActivityButton.Name = "editActivityButton";
+            this.editActivityButton.Size = new System.Drawing.Size(75, 23);
+            this.editActivityButton.TabIndex = 1;
+            this.editActivityButton.Text = "Edit";
+            this.editActivityButton.UseVisualStyleBackColor = true;
+            this.editActivityButton.Click += new System.EventHandler(this.editActivityButton_Click);
+            // 
+            // addActivityButton
+            // 
+            this.addActivityButton.FlatAppearance.BorderSize = 0;
+            this.addActivityButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addActivityButton.Image = ((System.Drawing.Image)(resources.GetObject("addActivityButton.Image")));
+            this.addActivityButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addActivityButton.Location = new System.Drawing.Point(4, 3);
+            this.addActivityButton.Name = "addActivityButton";
+            this.addActivityButton.Size = new System.Drawing.Size(75, 23);
+            this.addActivityButton.TabIndex = 0;
+            this.addActivityButton.Text = "Add";
+            this.addActivityButton.UseVisualStyleBackColor = true;
+            this.addActivityButton.Click += new System.EventHandler(this.addActivityButton_Click);
+            // 
+            // activityToolStripMenuItem
+            // 
+            this.activityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem2,
+            this.editToolStripMenuItem2,
+            this.deleteToolStripMenuItem2,
+            this.viewToolStripMenuItem1});
+            this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
+            this.activityToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.activityToolStripMenuItem.Text = "Activity";
+            // 
+            // addToolStripMenuItem2
+            // 
+            this.addToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("addToolStripMenuItem2.Image")));
+            this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.addToolStripMenuItem2.Text = "Add";
+            this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
+            // 
+            // editToolStripMenuItem2
+            // 
+            this.editToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("editToolStripMenuItem2.Image")));
+            this.editToolStripMenuItem2.Name = "editToolStripMenuItem2";
+            this.editToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem2.Text = "Edit";
+            this.editToolStripMenuItem2.Click += new System.EventHandler(this.editToolStripMenuItem2_Click);
+            // 
+            // deleteToolStripMenuItem2
+            // 
+            this.deleteToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("deleteToolStripMenuItem2.Image")));
+            this.deleteToolStripMenuItem2.Name = "deleteToolStripMenuItem2";
+            this.deleteToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem2.Text = "Delete";
+            this.deleteToolStripMenuItem2.Click += new System.EventHandler(this.deleteToolStripMenuItem2_Click);
+            // 
+            // viewToolStripMenuItem1
+            // 
+            this.viewToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("viewToolStripMenuItem1.Image")));
+            this.viewToolStripMenuItem1.Name = "viewToolStripMenuItem1";
+            this.viewToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.viewToolStripMenuItem1.Text = "View";
+            this.viewToolStripMenuItem1.Click += new System.EventHandler(this.viewToolStripMenuItem1_Click);
             // 
             // StartForm
             // 
@@ -949,12 +1006,12 @@ namespace EMS.View
             ((System.ComponentModel.ISupportInitialize)(this.topicDataListView)).EndInit();
             this.detailViewTable.ResumeLayout(false);
             this.detailViewTable.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.topicBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityDataListView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.topicBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1018,7 +1075,7 @@ namespace EMS.View
         private BrightIdeasSoftware.OLVColumn eventEnd;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox activitySearchTextBox;
-        private System.Windows.Forms.ComboBox searchActivityComboBox;
+        private System.Windows.Forms.ComboBox activitySearchComboBox;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button viewActivityButton;
         private System.Windows.Forms.Button deleteActivityButton;
@@ -1032,5 +1089,10 @@ namespace EMS.View
         private BrightIdeasSoftware.OLVColumn activityStart;
         private BrightIdeasSoftware.OLVColumn activityEnd;
         private System.Windows.Forms.Label topicLabel;
+        private System.Windows.Forms.ToolStripMenuItem activityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem1;
     }
 }

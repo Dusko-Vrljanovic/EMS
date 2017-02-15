@@ -34,6 +34,7 @@ namespace EMS.View
             eventBindingSource.DataSource = eM.getEvents();
             eventListView.DataSource = eventBindingSource;
             eventButtonEnabled(false);
+            eventSearchComboBox.SelectedIndex = eventSearchComboBox.FindStringExact("All");
 
             detailLayoutPanel.RowStyles[0].Height = 90;
             detailLayoutPanel.RowStyles[1].Height = 0;
@@ -42,9 +43,11 @@ namespace EMS.View
             topicDataListView.DataSource = topicBindingSource;
             disableTopicButtons();
             topicLabel.Text = "";
+            topicSearchComboBox.SelectedIndex = topicSearchComboBox.FindStringExact("All");
 
             activityDataListView.DataSource = activityBindingSource;
             disableActivityButtons();
+            activitySearchComboBox.SelectedIndex = activitySearchComboBox.FindStringExact("All");
 
             eventSearchTextBox.Hide();
             topicSearchTextBox.Hide();
@@ -244,9 +247,6 @@ namespace EMS.View
 
         private void viewTopicButton_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            new TopicDetailViewForm(this, (Topic)topicDataListView.SelectedObject, aM).ShowDialog();
-            this.Show();
 
         }
 
@@ -286,17 +286,6 @@ namespace EMS.View
             }
         }
 
-        private void disableTopicButtons()
-        {
-            addTopicButton.Enabled = editTopicButton.Enabled = deleteTopicButton.Enabled = viewTopicButton.Enabled = false;
-        }
-
-        private void topicButtonEnabled(bool enabled)
-        {
-            editTopicButton.Enabled = deleteTopicButton.Enabled = viewTopicButton.Enabled = enabled;
-            addActivityButton.Enabled = enabled;
-        }
-
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (topicDataListView.SelectedIndex != -1)
@@ -307,6 +296,17 @@ namespace EMS.View
             {
                 MessageBox.Show("You have to select topic.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void disableTopicButtons()
+        {
+            addTopicButton.Enabled = editTopicButton.Enabled = deleteTopicButton.Enabled = viewTopicButton.Enabled = false;
+        }
+
+        private void topicButtonEnabled(bool enabled)
+        {
+            editTopicButton.Enabled = deleteTopicButton.Enabled = viewTopicButton.Enabled = enabled;
+            addActivityButton.Enabled = enabled;
         }
 
         private void topicDataListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -380,9 +380,89 @@ namespace EMS.View
 
 
 
+        private void addActivityButton_Click(object sender, EventArgs e)
+        {
+            Topic t = (Topic)topicDataListView.SelectedObject;
+            ActivityForm form = new ActivityForm(aM, t);
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                Activity temp = aM.getLastActivity();
+                activityBindingSource.Add(temp);
+            }
+        }
 
+        private void editActivityButton_Click(object sender, EventArgs e)
+        {
+            if (activityDataListView.SelectedIndex != -1)
+            {
+                Topic t = (Topic)topicDataListView.SelectedObject;
+                Activity a = (Activity)activityDataListView.SelectedObject;
+                ActivityForm form = new ActivityForm(aM, a, t);
+                DialogResult result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    activityBindingSource.Remove(a);
+                    Activity temp = aM.getLastActivity();
+                    activityBindingSource.Add(temp);
+                }
+            }
+        }
 
+        private void deleteActivityButton_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to delete topic?", "Event Managment System", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                if (activityDataListView.SelectedIndex != -1)
+                {
+                    Activity t = (Activity)activityDataListView.SelectedObject;
+                    if (aM.deleteActivity(t))
+                    {
+                        activityBindingSource.Remove(t);
+                    }
+                }
+            }
+        }
 
+        private void addToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            addActivityButton.PerformClick();
+        }
+
+        private void editToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (activityDataListView.SelectedIndex != -1)
+            {
+                editActivityButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select activity.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void deleteToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            if (activityDataListView.SelectedIndex != -1)
+            {
+                deleteActivityButton.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("You have to select activity.", "Event Managment System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void viewActivityButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void viewToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void disableActivityButtons()
         {
@@ -436,5 +516,22 @@ namespace EMS.View
             // Clear the resizing flag
             resizing = false;
         }
+
+        private void searchActivityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            searchActivities();
+        }
+
+        private void searchActivities()
+        {
+            activityDataListView.UseFiltering = true;
+            activityDataListView.ModelFilter = new ModelFilter(x =>
+            {
+                var t = x as Activity;
+                return x != null && (t.Title.ToLower().Contains(activitySearchTextBox.Text.ToLower()));
+            });
+        }
+
+        
     }
 }
